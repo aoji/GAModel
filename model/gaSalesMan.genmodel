@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/gaSalesMan/src" modelPluginID="gaSalesMan" modelName="GaSalesMan"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>gaSalesMan.ecore</foreignModel>
+  <genPackages prefix="GaSalesMan" disposableProviderFactory="true" ecorePackage="gaSalesMan.ecore#/">
+    <genClasses ecoreClass="gaSalesMan.ecore#//Population">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//Population/pSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Population/chromosomes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//Population/mProb"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Population/crossover"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Population/mutate"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Population/findFittest"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Population/generateChromosome"/>
+    </genClasses>
+    <genClasses ecoreClass="gaSalesMan.ecore#//Chromosome">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Chromosome/genes"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Chromosome/fitness"/>
+    </genClasses>
+    <genClasses ecoreClass="gaSalesMan.ecore#//Gene"/>
+    <genClasses ecoreClass="gaSalesMan.ecore#//City">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//City/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//City/y"/>
+    </genClasses>
+    <genClasses ecoreClass="gaSalesMan.ecore#//Tour">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Tour/cities"/>
+    </genClasses>
+    <genClasses ecoreClass="gaSalesMan.ecore#//Optimizer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Optimizer/populations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Optimizer/maps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//Optimizer/maxGenerations"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Optimizer/generatePopulation"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Optimizer/evolvePopulation"/>
+    </genClasses>
+    <genClasses ecoreClass="gaSalesMan.ecore#//CitiesMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//CitiesMap/cities"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//CitiesMap/xRange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//CitiesMap/yRange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//CitiesMap/numCities"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//CitiesMap/initialize"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
