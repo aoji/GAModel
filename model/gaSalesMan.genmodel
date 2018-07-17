@@ -12,7 +12,7 @@
       <genOperations ecoreOperation="gaSalesMan.ecore#//Population/crossover"/>
       <genOperations ecoreOperation="gaSalesMan.ecore#//Population/mutate"/>
       <genOperations ecoreOperation="gaSalesMan.ecore#//Population/findFittest"/>
-      <genOperations ecoreOperation="gaSalesMan.ecore#//Population/generateChromosome"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Population/generateChromosomes"/>
     </genClasses>
     <genClasses ecoreClass="gaSalesMan.ecore#//Chromosome">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Chromosome/genes"/>
@@ -25,12 +25,13 @@
     </genClasses>
     <genClasses ecoreClass="gaSalesMan.ecore#//Tour">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Tour/cities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Tour/citiesmap"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Tour/initialize"/>
     </genClasses>
     <genClasses ecoreClass="gaSalesMan.ecore#//Optimizer">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Optimizer/populations"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Optimizer/maps"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//Optimizer/population"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//Optimizer/maxGenerations"/>
-      <genOperations ecoreOperation="gaSalesMan.ecore#//Optimizer/generatePopulation"/>
+      <genOperations ecoreOperation="gaSalesMan.ecore#//Optimizer/setupPopulation"/>
       <genOperations ecoreOperation="gaSalesMan.ecore#//Optimizer/evolvePopulation"/>
     </genClasses>
     <genClasses ecoreClass="gaSalesMan.ecore#//CitiesMap">
@@ -39,6 +40,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//CitiesMap/yRange"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gaSalesMan.ecore#//CitiesMap/numCities"/>
       <genOperations ecoreOperation="gaSalesMan.ecore#//CitiesMap/initialize"/>
+    </genClasses>
+    <genClasses ecoreClass="gaSalesMan.ecore#//TourPopulation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//TourPopulation/citiesmap"/>
+    </genClasses>
+    <genClasses ecoreClass="gaSalesMan.ecore#//TourOptimizer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//TourOptimizer/maps"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gaSalesMan.ecore#//TourOptimizer/tourpopulation"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
