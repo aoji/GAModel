@@ -22,33 +22,6 @@ public interface GaSalesManFactory extends EFactory {
 	GaSalesManFactory eINSTANCE = gaSalesMan.impl.GaSalesManFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Population</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Population</em>'.
-	 * @generated
-	 */
-	Population createPopulation();
-
-	/**
-	 * Returns a new object of class '<em>Chromosome</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Chromosome</em>'.
-	 * @generated
-	 */
-	Chromosome createChromosome();
-
-	/**
-	 * Returns a new object of class '<em>Gene</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Gene</em>'.
-	 * @generated
-	 */
-	Gene createGene();
-
-	/**
 	 * Returns a new object of class '<em>City</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -67,15 +40,6 @@ public interface GaSalesManFactory extends EFactory {
 	Tour createTour();
 
 	/**
-	 * Returns a new object of class '<em>Optimizer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Optimizer</em>'.
-	 * @generated
-	 */
-	Optimizer createOptimizer();
-
-	/**
 	 * Returns a new object of class '<em>Cities Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +47,24 @@ public interface GaSalesManFactory extends EFactory {
 	 * @generated
 	 */
 	CitiesMap createCitiesMap();
+
+	/**
+	 * Returns a new object of class '<em>Tour Population</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tour Population</em>'.
+	 * @generated
+	 */
+	TourPopulation createTourPopulation();
+
+	/**
+	 * Returns a new object of class '<em>Tour Optimizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tour Optimizer</em>'.
+	 * @generated
+	 */
+	TourOptimizer createTourOptimizer();
 
 	/**
 	 * Returns the package supported by this factory.

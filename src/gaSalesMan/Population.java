@@ -21,12 +21,13 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gaSalesMan.GaSalesManPackage#getPopulation()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Population extends EObject {
 	/**
 	 * Returns the value of the '<em><b>PSize</b></em>' attribute.
+	 * The default value is <code>"10"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>PSize</em>' attribute isn't clear,
@@ -36,7 +37,7 @@ public interface Population extends EObject {
 	 * @return the value of the '<em>PSize</em>' attribute.
 	 * @see #setPSize(int)
 	 * @see gaSalesMan.GaSalesManPackage#getPopulation_PSize()
-	 * @model
+	 * @model default="10"
 	 * @generated
 	 */
 	int getPSize();
@@ -69,6 +70,7 @@ public interface Population extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>MProb</b></em>' attribute.
+	 * The default value is <code>"0.2"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>MProb</em>' attribute isn't clear,
@@ -78,7 +80,7 @@ public interface Population extends EObject {
 	 * @return the value of the '<em>MProb</em>' attribute.
 	 * @see #setMProb(float)
 	 * @see gaSalesMan.GaSalesManPackage#getPopulation_MProb()
-	 * @model
+	 * @model default="0.2"
 	 * @generated
 	 */
 	float getMProb();
@@ -115,7 +117,7 @@ public interface Population extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void findFittest();
+	Chromosome findFittest();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,6 +125,6 @@ public interface Population extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void generateChromosome();
+	void generateChromosomes();
 
 } // Population

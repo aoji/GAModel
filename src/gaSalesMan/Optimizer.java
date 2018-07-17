@@ -2,8 +2,6 @@
  */
 package gaSalesMan;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,47 +13,40 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link gaSalesMan.Optimizer#getPopulations <em>Populations</em>}</li>
- *   <li>{@link gaSalesMan.Optimizer#getMaps <em>Maps</em>}</li>
+ *   <li>{@link gaSalesMan.Optimizer#getPopulation <em>Population</em>}</li>
  *   <li>{@link gaSalesMan.Optimizer#getMaxGenerations <em>Max Generations</em>}</li>
  * </ul>
  *
  * @see gaSalesMan.GaSalesManPackage#getOptimizer()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Optimizer extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Populations</b></em>' reference list.
-	 * The list contents are of type {@link gaSalesMan.Population}.
+	 * Returns the value of the '<em><b>Population</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Populations</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Population</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Populations</em>' reference list.
-	 * @see gaSalesMan.GaSalesManPackage#getOptimizer_Populations()
-	 * @model
+	 * @return the value of the '<em>Population</em>' reference.
+	 * @see #setPopulation(Population)
+	 * @see gaSalesMan.GaSalesManPackage#getOptimizer_Population()
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Population> getPopulations();
+	Population getPopulation();
 
 	/**
-	 * Returns the value of the '<em><b>Maps</b></em>' reference list.
-	 * The list contents are of type {@link gaSalesMan.CitiesMap}.
+	 * Sets the value of the '{@link gaSalesMan.Optimizer#getPopulation <em>Population</em>}' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Maps</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Maps</em>' reference list.
-	 * @see gaSalesMan.GaSalesManPackage#getOptimizer_Maps()
-	 * @model
+	 * @param value the new value of the '<em>Population</em>' reference.
+	 * @see #getPopulation()
 	 * @generated
 	 */
-	EList<CitiesMap> getMaps();
+	void setPopulation(Population value);
 
 	/**
 	 * Returns the value of the '<em><b>Max Generations</b></em>' attribute.
@@ -89,7 +80,7 @@ public interface Optimizer extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void generatePopulation();
+	void setupPopulation();
 
 	/**
 	 * <!-- begin-user-doc -->

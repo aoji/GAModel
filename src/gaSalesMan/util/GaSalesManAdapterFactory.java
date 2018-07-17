@@ -96,6 +96,14 @@ public class GaSalesManAdapterFactory extends AdapterFactoryImpl {
 				return createCitiesMapAdapter();
 			}
 			@Override
+			public Adapter caseTourPopulation(TourPopulation object) {
+				return createTourPopulationAdapter();
+			}
+			@Override
+			public Adapter caseTourOptimizer(TourOptimizer object) {
+				return createTourOptimizerAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -210,6 +218,34 @@ public class GaSalesManAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCitiesMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link gaSalesMan.TourPopulation <em>Tour Population</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see gaSalesMan.TourPopulation
+	 * @generated
+	 */
+	public Adapter createTourPopulationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link gaSalesMan.TourOptimizer <em>Tour Optimizer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see gaSalesMan.TourOptimizer
+	 * @generated
+	 */
+	public Adapter createTourOptimizerAdapter() {
 		return null;
 	}
 

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see gaSalesMan.GaSalesManPackage#getChromosome()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Chromosome extends EObject {
@@ -45,6 +45,6 @@ public interface Chromosome extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void fitness();
+	double fitness();
 
 } // Chromosome

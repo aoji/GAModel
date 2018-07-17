@@ -44,6 +44,7 @@ public interface CitiesMap extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>XRange</b></em>' attribute.
+	 * The default value is <code>"5.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>XRange</em>' attribute isn't clear,
@@ -53,7 +54,7 @@ public interface CitiesMap extends EObject {
 	 * @return the value of the '<em>XRange</em>' attribute.
 	 * @see #setXRange(float)
 	 * @see gaSalesMan.GaSalesManPackage#getCitiesMap_XRange()
-	 * @model
+	 * @model default="5.0"
 	 * @generated
 	 */
 	float getXRange();
@@ -70,6 +71,7 @@ public interface CitiesMap extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>YRange</b></em>' attribute.
+	 * The default value is <code>"5.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>YRange</em>' attribute isn't clear,
@@ -79,7 +81,7 @@ public interface CitiesMap extends EObject {
 	 * @return the value of the '<em>YRange</em>' attribute.
 	 * @see #setYRange(float)
 	 * @see gaSalesMan.GaSalesManPackage#getCitiesMap_YRange()
-	 * @model
+	 * @model default="5.0"
 	 * @generated
 	 */
 	float getYRange();
@@ -96,6 +98,7 @@ public interface CitiesMap extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Num Cities</b></em>' attribute.
+	 * The default value is <code>"5"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Num Cities</em>' attribute isn't clear,
@@ -105,7 +108,7 @@ public interface CitiesMap extends EObject {
 	 * @return the value of the '<em>Num Cities</em>' attribute.
 	 * @see #setNumCities(int)
 	 * @see gaSalesMan.GaSalesManPackage#getCitiesMap_NumCities()
-	 * @model
+	 * @model default="5"
 	 * @generated
 	 */
 	int getNumCities();

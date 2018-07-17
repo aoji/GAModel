@@ -56,46 +56,14 @@ public class GaSalesManFactoryImpl extends EFactoryImpl implements GaSalesManFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GaSalesManPackage.POPULATION: return createPopulation();
-			case GaSalesManPackage.CHROMOSOME: return createChromosome();
-			case GaSalesManPackage.GENE: return createGene();
 			case GaSalesManPackage.CITY: return createCity();
 			case GaSalesManPackage.TOUR: return createTour();
-			case GaSalesManPackage.OPTIMIZER: return createOptimizer();
 			case GaSalesManPackage.CITIES_MAP: return createCitiesMap();
+			case GaSalesManPackage.TOUR_POPULATION: return createTourPopulation();
+			case GaSalesManPackage.TOUR_OPTIMIZER: return createTourOptimizer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Population createPopulation() {
-		PopulationImpl population = new PopulationImpl();
-		return population;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Chromosome createChromosome() {
-		ChromosomeImpl chromosome = new ChromosomeImpl();
-		return chromosome;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Gene createGene() {
-		GeneImpl gene = new GeneImpl();
-		return gene;
 	}
 
 	/**
@@ -123,9 +91,9 @@ public class GaSalesManFactoryImpl extends EFactoryImpl implements GaSalesManFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Optimizer createOptimizer() {
-		OptimizerImpl optimizer = new OptimizerImpl();
-		return optimizer;
+	public CitiesMap createCitiesMap() {
+		CitiesMapImpl citiesMap = new CitiesMapImpl();
+		return citiesMap;
 	}
 
 	/**
@@ -133,9 +101,19 @@ public class GaSalesManFactoryImpl extends EFactoryImpl implements GaSalesManFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CitiesMap createCitiesMap() {
-		CitiesMapImpl citiesMap = new CitiesMapImpl();
-		return citiesMap;
+	public TourPopulation createTourPopulation() {
+		TourPopulationImpl tourPopulation = new TourPopulationImpl();
+		return tourPopulation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TourOptimizer createTourOptimizer() {
+		TourOptimizerImpl tourOptimizer = new TourOptimizerImpl();
+		return tourOptimizer;
 	}
 
 	/**

@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PopulationImpl extends MinimalEObjectImpl.Container implements Population {
+public abstract class PopulationImpl extends MinimalEObjectImpl.Container implements Population {
 	/**
 	 * The default value of the '{@link #getPSize() <em>PSize</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public class PopulationImpl extends MinimalEObjectImpl.Container implements Popu
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int PSIZE_EDEFAULT = 0;
+	protected static final int PSIZE_EDEFAULT = 10;
 
 	/**
 	 * The cached value of the '{@link #getPSize() <em>PSize</em>}' attribute.
@@ -78,7 +78,7 @@ public class PopulationImpl extends MinimalEObjectImpl.Container implements Popu
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float MPROB_EDEFAULT = 0.0F;
+	protected static final float MPROB_EDEFAULT = 0.2F;
 
 	/**
 	 * The cached value of the '{@link #getMProb() <em>MProb</em>}' attribute.
@@ -168,44 +168,28 @@ public class PopulationImpl extends MinimalEObjectImpl.Container implements Popu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void crossover() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract void crossover();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void mutate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract void mutate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void findFittest() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract Chromosome findFittest();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void generateChromosome() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract void generateChromosomes();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -316,10 +300,9 @@ public class PopulationImpl extends MinimalEObjectImpl.Container implements Popu
 				mutate();
 				return null;
 			case GaSalesManPackage.POPULATION___FIND_FITTEST:
-				findFittest();
-				return null;
-			case GaSalesManPackage.POPULATION___GENERATE_CHROMOSOME:
-				generateChromosome();
+				return findFittest();
+			case GaSalesManPackage.POPULATION___GENERATE_CHROMOSOMES:
+				generateChromosomes();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

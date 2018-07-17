@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ChromosomeImpl extends MinimalEObjectImpl.Container implements Chromosome {
+public abstract class ChromosomeImpl extends MinimalEObjectImpl.Container implements Chromosome {
 	/**
 	 * The cached value of the '{@link #getGenes() <em>Genes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -82,11 +82,7 @@ public class ChromosomeImpl extends MinimalEObjectImpl.Container implements Chro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fitness() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public abstract double fitness();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,8 +167,7 @@ public class ChromosomeImpl extends MinimalEObjectImpl.Container implements Chro
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case GaSalesManPackage.CHROMOSOME___FITNESS:
-				fitness();
-				return null;
+				return fitness();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

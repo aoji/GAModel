@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class GeneImpl extends MinimalEObjectImpl.Container implements Gene {
+public abstract class GeneImpl extends MinimalEObjectImpl.Container implements Gene {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -59,7 +59,7 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float XRANGE_EDEFAULT = 0.0F;
+	protected static final float XRANGE_EDEFAULT = 5.0F;
 
 	/**
 	 * The cached value of the '{@link #getXRange() <em>XRange</em>}' attribute.
@@ -79,7 +79,7 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float YRANGE_EDEFAULT = 0.0F;
+	protected static final float YRANGE_EDEFAULT = 5.0F;
 
 	/**
 	 * The cached value of the '{@link #getYRange() <em>YRange</em>}' attribute.
@@ -99,7 +99,7 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUM_CITIES_EDEFAULT = 0;
+	protected static final int NUM_CITIES_EDEFAULT = 5;
 
 	/**
 	 * The cached value of the '{@link #getNumCities() <em>Num Cities</em>}' attribute.
@@ -211,9 +211,14 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	 * @generated
 	 */
 	public void initialize() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		for (int i = 0; i < numCities; i++){
+			CityImpl city = new CityImpl();
+			city.setX((float) Math.random() * xRange);
+			city.setY((float) Math.random() * yRange);
+			
+			cities.add(city);
+		}
 	}
 
 	/**

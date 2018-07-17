@@ -131,13 +131,13 @@ public interface GaSalesManPackage extends EPackage {
 	int POPULATION___FIND_FITTEST = 2;
 
 	/**
-	 * The operation id for the '<em>Generate Chromosome</em>' operation.
+	 * The operation id for the '<em>Generate Chromosomes</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POPULATION___GENERATE_CHROMOSOME = 3;
+	int POPULATION___GENERATE_CHROMOSOMES = 3;
 
 	/**
 	 * The number of operations of the '<em>Population</em>' class.
@@ -193,7 +193,25 @@ public interface GaSalesManPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHROMOSOME_OPERATION_COUNT = 1;
-
+	
+	/**
+	 * The feature id for the '<em><b>Citiesmap</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR__CITIESMAP = CHROMOSOME_FEATURE_COUNT + 1;
+	
+	/**
+	 * The operation id for the '<em>Initialize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR___INITIALIZE = CHROMOSOME_OPERATION_COUNT + 0;
+	
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.GeneImpl <em>Gene</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -334,22 +352,13 @@ public interface GaSalesManPackage extends EPackage {
 	int OPTIMIZER = 5;
 
 	/**
-	 * The feature id for the '<em><b>Populations</b></em>' reference list.
+	 * The feature id for the '<em><b>Population</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIMIZER__POPULATIONS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Maps</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER__MAPS = 1;
+	int OPTIMIZER__POPULATION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Generations</b></em>' attribute.
@@ -358,7 +367,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIMIZER__MAX_GENERATIONS = 2;
+	int OPTIMIZER__MAX_GENERATIONS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Optimizer</em>' class.
@@ -367,16 +376,16 @@ public interface GaSalesManPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIMIZER_FEATURE_COUNT = 3;
+	int OPTIMIZER_FEATURE_COUNT = 2;
 
 	/**
-	 * The operation id for the '<em>Generate Population</em>' operation.
+	 * The operation id for the '<em>Setup Population</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTIMIZER___GENERATE_POPULATION = 0;
+	int OPTIMIZER___SETUP_POPULATION = 0;
 
 	/**
 	 * The operation id for the '<em>Evolve Population</em>' operation.
@@ -469,7 +478,189 @@ public interface GaSalesManPackage extends EPackage {
 	 */
 	int CITIES_MAP_OPERATION_COUNT = 1;
 
+	/**
+	 * The meta object id for the '{@link gaSalesMan.impl.TourPopulationImpl <em>Tour Population</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see gaSalesMan.impl.TourPopulationImpl
+	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getTourPopulation()
+	 * @generated
+	 */
+	int TOUR_POPULATION = 7;
 
+	/**
+	 * The feature id for the '<em><b>PSize</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION__PSIZE = POPULATION__PSIZE;
+
+	/**
+	 * The feature id for the '<em><b>Chromosomes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION__CHROMOSOMES = POPULATION__CHROMOSOMES;
+
+	/**
+	 * The feature id for the '<em><b>MProb</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION__MPROB = POPULATION__MPROB;
+
+	/**
+	 * The number of structural features of the '<em>Tour Population</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION_FEATURE_COUNT = POPULATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Crossover</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION___CROSSOVER = POPULATION___CROSSOVER;
+
+	/**
+	 * The operation id for the '<em>Mutate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION___MUTATE = POPULATION___MUTATE;
+
+	/**
+	 * The operation id for the '<em>Find Fittest</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION___FIND_FITTEST = POPULATION___FIND_FITTEST;
+
+	/**
+	 * The operation id for the '<em>Generate Chromosomes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION___GENERATE_CHROMOSOMES = POPULATION___GENERATE_CHROMOSOMES;
+
+	/**
+	 * The number of operations of the '<em>Tour Population</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION_OPERATION_COUNT = POPULATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link gaSalesMan.impl.TourOptimizerImpl <em>Tour Optimizer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see gaSalesMan.impl.TourOptimizerImpl
+	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getTourOptimizer()
+	 * @generated
+	 */
+	int TOUR_OPTIMIZER = 8;
+
+	/**
+	 * The feature id for the '<em><b>Population</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__POPULATION = OPTIMIZER__POPULATION;
+
+	/**
+	 * The feature id for the '<em><b>Max Generations</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__MAX_GENERATIONS = OPTIMIZER__MAX_GENERATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Maps</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__MAPS = OPTIMIZER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Tourpopulation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__TOURPOPULATION = OPTIMIZER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Tour Optimizer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER_FEATURE_COUNT = OPTIMIZER_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Setup Population</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER___SETUP_POPULATION = OPTIMIZER___SETUP_POPULATION;
+
+	/**
+	 * The operation id for the '<em>Evolve Population</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER___EVOLVE_POPULATION = OPTIMIZER___EVOLVE_POPULATION;
+
+	/**
+	 * The number of operations of the '<em>Tour Optimizer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER_OPERATION_COUNT = OPTIMIZER_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The feature id for the '<em><b>Citiesmap</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_POPULATION__CITIESMAP = POPULATION_FEATURE_COUNT + 0;
+	
 	/**
 	 * Returns the meta object for class '{@link gaSalesMan.Population <em>Population</em>}'.
 	 * <!-- begin-user-doc -->
@@ -544,14 +735,14 @@ public interface GaSalesManPackage extends EPackage {
 	EOperation getPopulation__FindFittest();
 
 	/**
-	 * Returns the meta object for the '{@link gaSalesMan.Population#generateChromosome() <em>Generate Chromosome</em>}' operation.
+	 * Returns the meta object for the '{@link gaSalesMan.Population#generateChromosomes() <em>Generate Chromosomes</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Generate Chromosome</em>' operation.
-	 * @see gaSalesMan.Population#generateChromosome()
+	 * @return the meta object for the '<em>Generate Chromosomes</em>' operation.
+	 * @see gaSalesMan.Population#generateChromosomes()
 	 * @generated
 	 */
-	EOperation getPopulation__GenerateChromosome();
+	EOperation getPopulation__GenerateChromosomes();
 
 	/**
 	 * Returns the meta object for class '{@link gaSalesMan.Chromosome <em>Chromosome</em>}'.
@@ -658,26 +849,15 @@ public interface GaSalesManPackage extends EPackage {
 	EClass getOptimizer();
 
 	/**
-	 * Returns the meta object for the reference list '{@link gaSalesMan.Optimizer#getPopulations <em>Populations</em>}'.
+	 * Returns the meta object for the reference '{@link gaSalesMan.Optimizer#getPopulation <em>Population</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Populations</em>'.
-	 * @see gaSalesMan.Optimizer#getPopulations()
+	 * @return the meta object for the reference '<em>Population</em>'.
+	 * @see gaSalesMan.Optimizer#getPopulation()
 	 * @see #getOptimizer()
 	 * @generated
 	 */
-	EReference getOptimizer_Populations();
-
-	/**
-	 * Returns the meta object for the reference list '{@link gaSalesMan.Optimizer#getMaps <em>Maps</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Maps</em>'.
-	 * @see gaSalesMan.Optimizer#getMaps()
-	 * @see #getOptimizer()
-	 * @generated
-	 */
-	EReference getOptimizer_Maps();
+	EReference getOptimizer_Population();
 
 	/**
 	 * Returns the meta object for the attribute '{@link gaSalesMan.Optimizer#getMaxGenerations <em>Max Generations</em>}'.
@@ -691,14 +871,14 @@ public interface GaSalesManPackage extends EPackage {
 	EAttribute getOptimizer_MaxGenerations();
 
 	/**
-	 * Returns the meta object for the '{@link gaSalesMan.Optimizer#generatePopulation() <em>Generate Population</em>}' operation.
+	 * Returns the meta object for the '{@link gaSalesMan.Optimizer#setupPopulation() <em>Setup Population</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Generate Population</em>' operation.
-	 * @see gaSalesMan.Optimizer#generatePopulation()
+	 * @return the meta object for the '<em>Setup Population</em>' operation.
+	 * @see gaSalesMan.Optimizer#setupPopulation()
 	 * @generated
 	 */
-	EOperation getOptimizer__GeneratePopulation();
+	EOperation getOptimizer__SetupPopulation();
 
 	/**
 	 * Returns the meta object for the '{@link gaSalesMan.Optimizer#evolvePopulation() <em>Evolve Population</em>}' operation.
@@ -773,6 +953,48 @@ public interface GaSalesManPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getCitiesMap__Initialize();
+
+	/**
+	 * Returns the meta object for class '{@link gaSalesMan.TourPopulation <em>Tour Population</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tour Population</em>'.
+	 * @see gaSalesMan.TourPopulation
+	 * @generated
+	 */
+	EClass getTourPopulation();
+
+	/**
+	 * Returns the meta object for class '{@link gaSalesMan.TourOptimizer <em>Tour Optimizer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tour Optimizer</em>'.
+	 * @see gaSalesMan.TourOptimizer
+	 * @generated
+	 */
+	EClass getTourOptimizer();
+
+	/**
+	 * Returns the meta object for the reference '{@link gaSalesMan.TourOptimizer#getMaps <em>Maps</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Maps</em>'.
+	 * @see gaSalesMan.TourOptimizer#getMaps()
+	 * @see #getTourOptimizer()
+	 * @generated
+	 */
+	EReference getTourOptimizer_Maps();
+
+	/**
+	 * Returns the meta object for the reference '{@link gaSalesMan.TourOptimizer#getTourpopulation <em>Tourpopulation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tourpopulation</em>'.
+	 * @see gaSalesMan.TourOptimizer#getTourpopulation()
+	 * @see #getTourOptimizer()
+	 * @generated
+	 */
+	EReference getTourOptimizer_Tourpopulation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -856,12 +1078,12 @@ public interface GaSalesManPackage extends EPackage {
 		EOperation POPULATION___FIND_FITTEST = eINSTANCE.getPopulation__FindFittest();
 
 		/**
-		 * The meta object literal for the '<em><b>Generate Chromosome</b></em>' operation.
+		 * The meta object literal for the '<em><b>Generate Chromosomes</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation POPULATION___GENERATE_CHROMOSOME = eINSTANCE.getPopulation__GenerateChromosome();
+		EOperation POPULATION___GENERATE_CHROMOSOMES = eINSTANCE.getPopulation__GenerateChromosomes();
 
 		/**
 		 * The meta object literal for the '{@link gaSalesMan.impl.ChromosomeImpl <em>Chromosome</em>}' class.
@@ -954,20 +1176,12 @@ public interface GaSalesManPackage extends EPackage {
 		EClass OPTIMIZER = eINSTANCE.getOptimizer();
 
 		/**
-		 * The meta object literal for the '<em><b>Populations</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Population</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OPTIMIZER__POPULATIONS = eINSTANCE.getOptimizer_Populations();
-
-		/**
-		 * The meta object literal for the '<em><b>Maps</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPTIMIZER__MAPS = eINSTANCE.getOptimizer_Maps();
+		EReference OPTIMIZER__POPULATION = eINSTANCE.getOptimizer_Population();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Generations</b></em>' attribute feature.
@@ -978,12 +1192,12 @@ public interface GaSalesManPackage extends EPackage {
 		EAttribute OPTIMIZER__MAX_GENERATIONS = eINSTANCE.getOptimizer_MaxGenerations();
 
 		/**
-		 * The meta object literal for the '<em><b>Generate Population</b></em>' operation.
+		 * The meta object literal for the '<em><b>Setup Population</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation OPTIMIZER___GENERATE_POPULATION = eINSTANCE.getOptimizer__GeneratePopulation();
+		EOperation OPTIMIZER___SETUP_POPULATION = eINSTANCE.getOptimizer__SetupPopulation();
 
 		/**
 		 * The meta object literal for the '<em><b>Evolve Population</b></em>' operation.
@@ -1042,6 +1256,42 @@ public interface GaSalesManPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CITIES_MAP___INITIALIZE = eINSTANCE.getCitiesMap__Initialize();
+
+		/**
+		 * The meta object literal for the '{@link gaSalesMan.impl.TourPopulationImpl <em>Tour Population</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see gaSalesMan.impl.TourPopulationImpl
+		 * @see gaSalesMan.impl.GaSalesManPackageImpl#getTourPopulation()
+		 * @generated
+		 */
+		EClass TOUR_POPULATION = eINSTANCE.getTourPopulation();
+
+		/**
+		 * The meta object literal for the '{@link gaSalesMan.impl.TourOptimizerImpl <em>Tour Optimizer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see gaSalesMan.impl.TourOptimizerImpl
+		 * @see gaSalesMan.impl.GaSalesManPackageImpl#getTourOptimizer()
+		 * @generated
+		 */
+		EClass TOUR_OPTIMIZER = eINSTANCE.getTourOptimizer();
+
+		/**
+		 * The meta object literal for the '<em><b>Maps</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOUR_OPTIMIZER__MAPS = eINSTANCE.getTourOptimizer_Maps();
+
+		/**
+		 * The meta object literal for the '<em><b>Tourpopulation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOUR_OPTIMIZER__TOURPOPULATION = eINSTANCE.getTourOptimizer_Tourpopulation();
 
 	}
 

@@ -110,6 +110,20 @@ public class GaSalesManSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GaSalesManPackage.TOUR_POPULATION: {
+				TourPopulation tourPopulation = (TourPopulation)theEObject;
+				T result = caseTourPopulation(tourPopulation);
+				if (result == null) result = casePopulation(tourPopulation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GaSalesManPackage.TOUR_OPTIMIZER: {
+				TourOptimizer tourOptimizer = (TourOptimizer)theEObject;
+				T result = caseTourOptimizer(tourOptimizer);
+				if (result == null) result = caseOptimizer(tourOptimizer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -216,6 +230,36 @@ public class GaSalesManSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCitiesMap(CitiesMap object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tour Population</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tour Population</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTourPopulation(TourPopulation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tour Optimizer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tour Optimizer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTourOptimizer(TourOptimizer object) {
 		return null;
 	}
 

@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see gaSalesMan.GaSalesManPackage#getGene()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Gene extends EObject {
