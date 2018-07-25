@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gaSalesMan" nsURI="http://www.example.org/gaSalesMan" nsPrefix="gaSalesMan">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Population" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="numOfChromosomes"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="numOfChromosomes" value="self.chromosomes->size() &lt;= self.pSize"/>
+    </eAnnotations>
+    <eOperations name="crossover"/>
+    <eOperations name="mutate"/>
+    <eOperations name="findFittest" eType="#//Chromosome"/>
+    <eOperations name="generateChromosomes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="10"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mProb" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="0.2"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chromosomes" upperBound="-1"
+        eType="#//Chromosome" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Chromosome" abstract="true">
+    <eOperations name="fitness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genes" upperBound="-1"
+        eType="#//Gene" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gene" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="City" eSuperTypes="#//Gene">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncompleteTour" eSuperTypes="#//Chromosome">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="checkCities"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="checkCities" value="self.cities->size() &lt;= self.maps.numCities"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cities" upperBound="-1"
+        eType="#//City" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maps" lowerBound="1" eType="#//CitiesMap"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompleteTour" eSuperTypes="#//Chromosome">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="checkCities"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="checkCities" value="self.cities->size() = self.maps.numCities"/>
+    </eAnnotations>
+    <eOperations name="initialize"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelB" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cities" upperBound="-1"
+        eType="#//City" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maps" lowerBound="1" eType="#//CitiesMap"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Optimizer" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="numOfPopulations"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="numOfPopulations" value="self.iterations &lt;= self.maxGenerations"/>
+    </eAnnotations>
+    <eOperations name="setupPopulation"/>
+    <eOperations name="evolvePopulation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxGenerations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iterations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="populations" lowerBound="1"
+        eType="#//Population"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CitiesMap">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="numOfCities xyCoordinates"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="numOfCities" value="self.cities->size() = self.numCities"/>
+      <details key="xyCoordinates" value="self.cities->forAll(c | (c.x &lt;= self.xRange) and (c.y &lt;= self.yRange))"/>
+    </eAnnotations>
+    <eOperations name="initialize"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="5.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yRange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="5.0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numCities" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="5"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cities" upperBound="-1"
+        eType="#//City" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TourOptimizer" eSuperTypes="#//Optimizer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maps" lowerBound="1" eType="#//CitiesMap"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tourpopulations" lowerBound="1"
+        eType="#//TourPopulation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TourPopulation" eSuperTypes="#//Population">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maps" lowerBound="1" eType="#//CitiesMap"/>
+  </eClassifiers>
+</ecore:EPackage>
