@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated gaSalesMan -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="gaSalesMan.presentation.GaSalesManModelWizardID"
+            name="%_UI_GaSalesManModelWizard_label"
+            class="gaSalesMan.presentation.GaSalesManModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GaSalesManModelFile.gif">
+         <description>%_UI_GaSalesManModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated gaSalesMan -->
+      <editor
+            id="gaSalesMan.presentation.GaSalesManEditorID"
+            name="%_UI_GaSalesManEditor_label"
+            icon="icons/full/obj16/GaSalesManModelFile.gif"
+            extensions="gasalesman"
+            class="gaSalesMan.presentation.GaSalesManEditor"
+            contributorClass="gaSalesMan.presentation.GaSalesManActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
