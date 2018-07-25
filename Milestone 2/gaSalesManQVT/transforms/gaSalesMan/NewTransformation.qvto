@@ -1,0 +1,25 @@
+modeltype gaSalesMan "strict" uses gaSalesMan("http://www.example.org/gaSalesMan");
+
+transformation NewTransformation(in source: gaSalesMan, out target: gaSalesMan);
+
+main() 
+{
+	source.rootObjects()[TourOptimizer]->map gaSalesMan2gaSalesMan();
+}
+
+mapping TourOptimizer::gaSalesMan2gaSalesMan() : TourOptimizer 
+{
+	self.setupPopulation();
+	self.evolvePopulation();
+	self.tourpopulations.chromosomes += self.tourpopulations.chromosomes->select(a| a.oclIsKindOf(IncompleteTour))[IncompleteTour]->map Incomplete2CompleteTour();
+}
+
+/** If a tour contains less cities than the total number of cities, 
+	then it can contain more cities (i.e. become longer).
+**/
+mapping IncompleteTour::Incomplete2CompleteTour() : CompleteTour
+when {self.cities->size() < self.maps.numCities}
+{
+	result.cities := maps.cities;
+	result.modelB := self.modelA + ": you can visit more cities";
+}

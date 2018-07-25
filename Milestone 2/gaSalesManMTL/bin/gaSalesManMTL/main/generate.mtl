@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/gaSalesMan')]
+
+
+[template public generateElement(anOclAny : OclAny)]
+[comment @main/]
+[file (anOclAny.name, false, 'UTF-8')]
+
+[/file]
+[/template]
