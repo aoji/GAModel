@@ -13,9 +13,12 @@ import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -32,15 +35,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link gaSalesMan.impl.CitiesMapImpl#getNumCities <em>Num Cities</em>}</li>
  *   <li>{@link gaSalesMan.impl.CitiesMapImpl#getXRange <em>XRange</em>}</li>
  *   <li>{@link gaSalesMan.impl.CitiesMapImpl#getYRange <em>YRange</em>}</li>
- *   <li>{@link gaSalesMan.impl.CitiesMapImpl#getNumCities <em>Num Cities</em>}</li>
  *   <li>{@link gaSalesMan.impl.CitiesMapImpl#getCities <em>Cities</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class CitiesMapImpl extends MinimalEObjectImpl.Container implements CitiesMap {
+	/**
+	 * The default value of the '{@link #getNumCities() <em>Num Cities</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumCities()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUM_CITIES_EDEFAULT = 5;
+
+	/**
+	 * The cached value of the '{@link #getNumCities() <em>Num Cities</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumCities()
+	 * @generated
+	 * @ordered
+	 */
+	protected int numCities = NUM_CITIES_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getXRange() <em>XRange</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -80,26 +103,6 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	 * @ordered
 	 */
 	protected float yRange = YRANGE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNumCities() <em>Num Cities</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumCities()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int NUM_CITIES_EDEFAULT = 5;
-
-	/**
-	 * The cached value of the '{@link #getNumCities() <em>Num Cities</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNumCities()
-	 * @generated
-	 * @ordered
-	 */
-	protected int numCities = NUM_CITIES_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCities() <em>Cities</em>}' containment reference list.
@@ -221,6 +224,30 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #appearsOnce(gaSalesMan.City) <em>Appears Once</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #appearsOnce(gaSalesMan.City)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate APPEARS_ONCE_CITY__EINVOCATION_DELEGATE = ((EOperation.Internal)GaSalesManPackage.Literals.CITIES_MAP___APPEARS_ONCE__CITY).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean appearsOnce(City city) {
+		try {
+			return (Boolean)APPEARS_ONCE_CITY__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{city}));
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -242,12 +269,12 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
+				return getNumCities();
 			case GaSalesManPackage.CITIES_MAP__XRANGE:
 				return getXRange();
 			case GaSalesManPackage.CITIES_MAP__YRANGE:
 				return getYRange();
-			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
-				return getNumCities();
 			case GaSalesManPackage.CITIES_MAP__CITIES:
 				return getCities();
 		}
@@ -263,14 +290,14 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
+				setNumCities((Integer)newValue);
+				return;
 			case GaSalesManPackage.CITIES_MAP__XRANGE:
 				setXRange((Float)newValue);
 				return;
 			case GaSalesManPackage.CITIES_MAP__YRANGE:
 				setYRange((Float)newValue);
-				return;
-			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
-				setNumCities((Integer)newValue);
 				return;
 			case GaSalesManPackage.CITIES_MAP__CITIES:
 				getCities().clear();
@@ -288,14 +315,14 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
+				setNumCities(NUM_CITIES_EDEFAULT);
+				return;
 			case GaSalesManPackage.CITIES_MAP__XRANGE:
 				setXRange(XRANGE_EDEFAULT);
 				return;
 			case GaSalesManPackage.CITIES_MAP__YRANGE:
 				setYRange(YRANGE_EDEFAULT);
-				return;
-			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
-				setNumCities(NUM_CITIES_EDEFAULT);
 				return;
 			case GaSalesManPackage.CITIES_MAP__CITIES:
 				getCities().clear();
@@ -312,12 +339,12 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
+				return numCities != NUM_CITIES_EDEFAULT;
 			case GaSalesManPackage.CITIES_MAP__XRANGE:
 				return xRange != XRANGE_EDEFAULT;
 			case GaSalesManPackage.CITIES_MAP__YRANGE:
 				return yRange != YRANGE_EDEFAULT;
-			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
-				return numCities != NUM_CITIES_EDEFAULT;
 			case GaSalesManPackage.CITIES_MAP__CITIES:
 				return cities != null && !cities.isEmpty();
 		}
@@ -335,6 +362,8 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 			case GaSalesManPackage.CITIES_MAP___INITIALIZE:
 				initialize();
 				return null;
+			case GaSalesManPackage.CITIES_MAP___APPEARS_ONCE__CITY:
+				return appearsOnce((City)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -349,12 +378,12 @@ public class CitiesMapImpl extends MinimalEObjectImpl.Container implements Citie
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (xRange: ");
+		result.append(" (numCities: ");
+		result.append(numCities);
+		result.append(", xRange: ");
 		result.append(xRange);
 		result.append(", yRange: ");
 		result.append(yRange);
-		result.append(", numCities: ");
-		result.append(numCities);
 		result.append(')');
 		return result.toString();
 	}

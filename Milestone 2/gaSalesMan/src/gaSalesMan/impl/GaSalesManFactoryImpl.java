@@ -56,12 +56,12 @@ public class GaSalesManFactoryImpl extends EFactoryImpl implements GaSalesManFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GaSalesManPackage.CITY: return createCity();
+			case GaSalesManPackage.TOUR_POPULATION: return createTourPopulation();
 			case GaSalesManPackage.INCOMPLETE_TOUR: return createIncompleteTour();
 			case GaSalesManPackage.COMPLETE_TOUR: return createCompleteTour();
-			case GaSalesManPackage.CITIES_MAP: return createCitiesMap();
+			case GaSalesManPackage.CITY: return createCity();
 			case GaSalesManPackage.TOUR_OPTIMIZER: return createTourOptimizer();
-			case GaSalesManPackage.TOUR_POPULATION: return createTourPopulation();
+			case GaSalesManPackage.CITIES_MAP: return createCitiesMap();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

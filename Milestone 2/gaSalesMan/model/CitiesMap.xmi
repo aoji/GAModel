@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gaSalesMan:CitiesMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gaSalesMan="http://www.example.org/gaSalesMan" xsi:schemaLocation="http://www.example.org/gaSalesMan gaSalesMan.ecore">
+<gaSalesMan:CitiesMap xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gaSalesMan="http://www.example.org/gaSalesMan" xsi:schemaLocation="http://www.example.org/gaSalesMan gaSalesMan.ecore" xRange="10.0" yRange="10.0">
   <cities name="Ottawa"/>
-  <cities name="Kingston"/>
-  <cities name="Montreal"/>
-  <cities name="Toronto"/>
-  <cities name="London"/>
+  <cities name="Kingston" x="3.0" y="1.0"/>
+  <cities name="Montreal" x="5.0" y="5.0"/>
+  <cities name="Toronto" x="2.0" y="8.0"/>
+  <cities name="London" x="10.0" y="10.0"/>
 </gaSalesMan:CitiesMap>

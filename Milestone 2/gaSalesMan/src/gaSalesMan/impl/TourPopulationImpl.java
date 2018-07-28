@@ -211,7 +211,6 @@ public class TourPopulationImpl extends PopulationImpl implements TourPopulation
 	public void generateChromosomes() {
 		for (int i = 0; i < pSize; i++) {
 			CompleteTour t = new CompleteTourImpl();
-			t.initialize();
 			
 			chromosomes.add(t);
 		}

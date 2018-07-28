@@ -15,15 +15,15 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link gaSalesMan.CitiesMap#getNumCities <em>Num Cities</em>}</li>
  *   <li>{@link gaSalesMan.CitiesMap#getXRange <em>XRange</em>}</li>
  *   <li>{@link gaSalesMan.CitiesMap#getYRange <em>YRange</em>}</li>
- *   <li>{@link gaSalesMan.CitiesMap#getNumCities <em>Num Cities</em>}</li>
  *   <li>{@link gaSalesMan.CitiesMap#getCities <em>Cities</em>}</li>
  * </ul>
  *
  * @see gaSalesMan.GaSalesManPackage#getCitiesMap()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numOfCities xyCoordinates'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot numOfCities='self.cities->size() = self.numCities' xyCoordinates='self.cities->forAll(c | (c.x <= self.xRange) and (c.y <= self.yRange))'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numOfCities xyCoordinates validateCity'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot numOfCities='self.cities->size() = self.numCities' xyCoordinates='self.cities->forAll(c | (c.x <= self.xRange) and (c.y <= self.yRange))' validateCity='self.cities->forAll(c | appearsOnce(c))'"
  * @generated
  */
 public interface CitiesMap extends EObject {
@@ -131,5 +131,13 @@ public interface CitiesMap extends EObject {
 	 * @generated
 	 */
 	void initialize();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() = 1'"
+	 * @generated
+	 */
+	boolean appearsOnce(City city);
 
 } // CitiesMap

@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see gaSalesMan.GaSalesManPackage#getOptimizer()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numOfPopulations'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot numOfPopulations='self.iterations <= self.maxGenerations'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numOfGenerations'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot numOfGenerations='self.iterations <= self.maxGenerations'"
  * @generated
  */
 public interface Optimizer extends EObject {

@@ -13,42 +13,42 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link gaSalesMan.IncompleteTour#getModelA <em>Model A</em>}</li>
+ *   <li>{@link gaSalesMan.IncompleteTour#getModel <em>Model</em>}</li>
  *   <li>{@link gaSalesMan.IncompleteTour#getCities <em>Cities</em>}</li>
  *   <li>{@link gaSalesMan.IncompleteTour#getMaps <em>Maps</em>}</li>
  * </ul>
  *
  * @see gaSalesMan.GaSalesManPackage#getIncompleteTour()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='checkCities'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot checkCities='self.cities->size() <= self.maps.numCities'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='numOfCities validateCities'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot numOfCities='self.cities->size() <= self.maps.numCities' validateCities='self.cities->forAll(c | (isValidCity(c)))'"
  * @generated
  */
 public interface IncompleteTour extends Chromosome {
 	/**
-	 * Returns the value of the '<em><b>Model A</b></em>' attribute.
+	 * Returns the value of the '<em><b>Model</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Model A</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Model</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Model A</em>' attribute.
-	 * @see #setModelA(String)
-	 * @see gaSalesMan.GaSalesManPackage#getIncompleteTour_ModelA()
+	 * @return the value of the '<em>Model</em>' attribute.
+	 * @see #setModel(String)
+	 * @see gaSalesMan.GaSalesManPackage#getIncompleteTour_Model()
 	 * @model
 	 * @generated
 	 */
-	String getModelA();
+	String getModel();
 
 	/**
-	 * Sets the value of the '{@link gaSalesMan.IncompleteTour#getModelA <em>Model A</em>}' attribute.
+	 * Sets the value of the '{@link gaSalesMan.IncompleteTour#getModel <em>Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model A</em>' attribute.
-	 * @see #getModelA()
+	 * @param value the new value of the '<em>Model</em>' attribute.
+	 * @see #getModel()
 	 * @generated
 	 */
-	void setModelA(String value);
+	void setModel(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Cities</b></em>' containment reference list.
@@ -91,5 +91,13 @@ public interface IncompleteTour extends Chromosome {
 	 * @generated
 	 */
 	void setMaps(CitiesMap value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='(self.maps.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() = 1) and\n\t\t\t\t\t(self.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() >= 1)'"
+	 * @generated
+	 */
+	boolean isValidCity(City city);
 
 } // IncompleteTour

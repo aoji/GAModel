@@ -88,24 +88,24 @@ public class GaSalesManValidator extends EObjectValidator {
 		switch (classifierID) {
 			case GaSalesManPackage.POPULATION:
 				return validatePopulation((Population)value, diagnostics, context);
+			case GaSalesManPackage.TOUR_POPULATION:
+				return validateTourPopulation((TourPopulation)value, diagnostics, context);
 			case GaSalesManPackage.CHROMOSOME:
 				return validateChromosome((Chromosome)value, diagnostics, context);
-			case GaSalesManPackage.GENE:
-				return validateGene((Gene)value, diagnostics, context);
-			case GaSalesManPackage.CITY:
-				return validateCity((City)value, diagnostics, context);
 			case GaSalesManPackage.INCOMPLETE_TOUR:
 				return validateIncompleteTour((IncompleteTour)value, diagnostics, context);
 			case GaSalesManPackage.COMPLETE_TOUR:
 				return validateCompleteTour((CompleteTour)value, diagnostics, context);
+			case GaSalesManPackage.GENE:
+				return validateGene((Gene)value, diagnostics, context);
+			case GaSalesManPackage.CITY:
+				return validateCity((City)value, diagnostics, context);
 			case GaSalesManPackage.OPTIMIZER:
 				return validateOptimizer((Optimizer)value, diagnostics, context);
-			case GaSalesManPackage.CITIES_MAP:
-				return validateCitiesMap((CitiesMap)value, diagnostics, context);
 			case GaSalesManPackage.TOUR_OPTIMIZER:
 				return validateTourOptimizer((TourOptimizer)value, diagnostics, context);
-			case GaSalesManPackage.TOUR_POPULATION:
-				return validateTourPopulation((TourPopulation)value, diagnostics, context);
+			case GaSalesManPackage.CITIES_MAP:
+				return validateCitiesMap((CitiesMap)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -201,25 +201,26 @@ public class GaSalesManValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(incompleteTour, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(incompleteTour, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(incompleteTour, diagnostics, context);
-		if (result || diagnostics != null) result &= validateIncompleteTour_checkCities(incompleteTour, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncompleteTour_numOfCities(incompleteTour, diagnostics, context);
+		if (result || diagnostics != null) result &= validateIncompleteTour_validateCities(incompleteTour, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the checkCities constraint of '<em>Incomplete Tour</em>'.
+	 * The cached validation expression for the numOfCities constraint of '<em>Incomplete Tour</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String INCOMPLETE_TOUR__CHECK_CITIES__EEXPRESSION = "self.cities->size() <= self.maps.numCities";
+	protected static final String INCOMPLETE_TOUR__NUM_OF_CITIES__EEXPRESSION = "self.cities->size() <= self.maps.numCities";
 
 	/**
-	 * Validates the checkCities constraint of '<em>Incomplete Tour</em>'.
+	 * Validates the numOfCities constraint of '<em>Incomplete Tour</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateIncompleteTour_checkCities(IncompleteTour incompleteTour, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateIncompleteTour_numOfCities(IncompleteTour incompleteTour, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(GaSalesManPackage.Literals.INCOMPLETE_TOUR,
@@ -227,8 +228,37 @@ public class GaSalesManValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "checkCities",
-				 INCOMPLETE_TOUR__CHECK_CITIES__EEXPRESSION,
+				 "numOfCities",
+				 INCOMPLETE_TOUR__NUM_OF_CITIES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the validateCities constraint of '<em>Incomplete Tour</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INCOMPLETE_TOUR__VALIDATE_CITIES__EEXPRESSION = "self.cities->forAll(c | (isValidCity(c)))";
+
+	/**
+	 * Validates the validateCities constraint of '<em>Incomplete Tour</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIncompleteTour_validateCities(IncompleteTour incompleteTour, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(GaSalesManPackage.Literals.INCOMPLETE_TOUR,
+				 incompleteTour,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "validateCities",
+				 INCOMPLETE_TOUR__VALIDATE_CITIES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -249,25 +279,26 @@ public class GaSalesManValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(completeTour, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(completeTour, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(completeTour, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCompleteTour_checkCities(completeTour, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCompleteTour_numOfCities(completeTour, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCompleteTour_validateCities(completeTour, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the checkCities constraint of '<em>Complete Tour</em>'.
+	 * The cached validation expression for the numOfCities constraint of '<em>Complete Tour</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String COMPLETE_TOUR__CHECK_CITIES__EEXPRESSION = "self.cities->size() = self.maps.numCities";
+	protected static final String COMPLETE_TOUR__NUM_OF_CITIES__EEXPRESSION = "self.cities->size() = self.maps.numCities";
 
 	/**
-	 * Validates the checkCities constraint of '<em>Complete Tour</em>'.
+	 * Validates the numOfCities constraint of '<em>Complete Tour</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCompleteTour_checkCities(CompleteTour completeTour, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCompleteTour_numOfCities(CompleteTour completeTour, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(GaSalesManPackage.Literals.COMPLETE_TOUR,
@@ -275,8 +306,37 @@ public class GaSalesManValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "checkCities",
-				 COMPLETE_TOUR__CHECK_CITIES__EEXPRESSION,
+				 "numOfCities",
+				 COMPLETE_TOUR__NUM_OF_CITIES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the validateCities constraint of '<em>Complete Tour</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPLETE_TOUR__VALIDATE_CITIES__EEXPRESSION = "self.cities->forAll(c | (isValidCity(c)))";
+
+	/**
+	 * Validates the validateCities constraint of '<em>Complete Tour</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCompleteTour_validateCities(CompleteTour completeTour, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(GaSalesManPackage.Literals.COMPLETE_TOUR,
+				 completeTour,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "validateCities",
+				 COMPLETE_TOUR__VALIDATE_CITIES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -297,25 +357,25 @@ public class GaSalesManValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(optimizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(optimizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(optimizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOptimizer_numOfPopulations(optimizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateOptimizer_numOfGenerations(optimizer, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the numOfPopulations constraint of '<em>Optimizer</em>'.
+	 * The cached validation expression for the numOfGenerations constraint of '<em>Optimizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String OPTIMIZER__NUM_OF_POPULATIONS__EEXPRESSION = "self.iterations <= self.maxGenerations";
+	protected static final String OPTIMIZER__NUM_OF_GENERATIONS__EEXPRESSION = "self.iterations <= self.maxGenerations";
 
 	/**
-	 * Validates the numOfPopulations constraint of '<em>Optimizer</em>'.
+	 * Validates the numOfGenerations constraint of '<em>Optimizer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateOptimizer_numOfPopulations(Optimizer optimizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateOptimizer_numOfGenerations(Optimizer optimizer, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(GaSalesManPackage.Literals.OPTIMIZER,
@@ -323,8 +383,8 @@ public class GaSalesManValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "numOfPopulations",
-				 OPTIMIZER__NUM_OF_POPULATIONS__EEXPRESSION,
+				 "numOfGenerations",
+				 OPTIMIZER__NUM_OF_GENERATIONS__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -347,6 +407,7 @@ public class GaSalesManValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(citiesMap, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCitiesMap_numOfCities(citiesMap, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCitiesMap_xyCoordinates(citiesMap, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCitiesMap_validateCity(citiesMap, diagnostics, context);
 		return result;
 	}
 
@@ -409,6 +470,35 @@ public class GaSalesManValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the validateCity constraint of '<em>Cities Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CITIES_MAP__VALIDATE_CITY__EEXPRESSION = "self.cities->forAll(c | appearsOnce(c))";
+
+	/**
+	 * Validates the validateCity constraint of '<em>Cities Map</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCitiesMap_validateCity(CitiesMap citiesMap, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(GaSalesManPackage.Literals.CITIES_MAP,
+				 citiesMap,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "validateCity",
+				 CITIES_MAP__VALIDATE_CITY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -423,7 +513,7 @@ public class GaSalesManValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(tourOptimizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(tourOptimizer, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(tourOptimizer, diagnostics, context);
-		if (result || diagnostics != null) result &= validateOptimizer_numOfPopulations(tourOptimizer, diagnostics, context);
+		if (result || diagnostics != null) result &= validateOptimizer_numOfGenerations(tourOptimizer, diagnostics, context);
 		return result;
 	}
 

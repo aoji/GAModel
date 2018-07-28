@@ -1,2 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gaSalesMan:TourPopulation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gaSalesMan="http://www.example.org/gaSalesMan" xsi:schemaLocation="http://www.example.org/gaSalesMan gaSalesMan.ecore"/>
+<gaSalesMan:TourPopulation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gaSalesMan="http://www.example.org/gaSalesMan" xsi:schemaLocation="http://www.example.org/gaSalesMan gaSalesMan.ecore" pSize="5">
+  <chromosomes xsi:type="gaSalesMan:CompleteTour" fitness="0.1" model="B1">
+    <cities name="Ottawa"/>
+    <cities name="London" x="10.0" y="10.0"/>
+    <cities name="Kingston" x="3.0" y="1.0"/>
+    <cities name="Toronto" x="2.0" y="8.0"/>
+    <cities name="Montreal" x="5.0" y="5.0"/>
+    <maps href="CitiesMap.xmi#/"/>
+  </chromosomes>
+  <chromosomes xsi:type="gaSalesMan:IncompleteTour" fitness="0.05" model="A1">
+    <cities name="Ottawa"/>
+    <cities name="Toronto" x="2.0" y="8.0"/>
+    <maps href="CitiesMap.xmi#/"/>
+  </chromosomes>
+  <chromosomes xsi:type="gaSalesMan:CompleteTour" fitness="0.15" model="B2">
+    <cities name="Kingston" x="3.0" y="1.0"/>
+    <cities name="London" x="10.0" y="10.0"/>
+    <cities name="Montreal" x="5.0" y="5.0"/>
+    <cities name="Ottawa"/>
+    <cities name="Toronto" x="2.0" y="8.0"/>
+    <maps href="CitiesMap.xmi#/"/>
+  </chromosomes>
+  <chromosomes xsi:type="gaSalesMan:IncompleteTour" fitness="0.5" model="A2">
+    <genes xsi:type="gaSalesMan:City" name="Montreal" x="5.0" y="5.0"/>
+    <genes xsi:type="gaSalesMan:City" name="Kingston" x="3.0" y="1.0"/>
+    <genes xsi:type="gaSalesMan:City" name="London" x="10.0" y="10.0"/>
+    <maps href="CitiesMap.xmi#/"/>
+  </chromosomes>
+  <chromosomes xsi:type="gaSalesMan:IncompleteTour" fitness="0.7" model="A3">
+    <cities name="Ottawa"/>
+    <cities name="Montreal" x="5.0" y="5.0"/>
+    <cities name="Kingston" x="3.0" y="1.0"/>
+    <cities name="Toronto" x="2.0" y="8.0"/>
+    <cities name="Ottawa"/>
+    <maps href="CitiesMap.xmi#/"/>
+  </chromosomes>
+  <maps href="CitiesMap.xmi#/"/>
+</gaSalesMan:TourPopulation>

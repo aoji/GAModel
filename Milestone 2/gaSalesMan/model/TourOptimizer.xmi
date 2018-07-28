@@ -4,7 +4,9 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gaSalesMan="http://www.example.org/gaSalesMan"
-    xsi:schemaLocation="http://www.example.org/gaSalesMan gaSalesMan.ecore">
+    xsi:schemaLocation="http://www.example.org/gaSalesMan gaSalesMan.ecore"
+    maxGenerations="1"
+    iterations="1">
   <populations
       xsi:type="gaSalesMan:TourPopulation"
       href="TourPopulation.xmi#/"/>

@@ -7,14 +7,18 @@ import gaSalesMan.City;
 import gaSalesMan.GaSalesManPackage;
 import gaSalesMan.IncompleteTour;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -30,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link gaSalesMan.impl.IncompleteTourImpl#getModelA <em>Model A</em>}</li>
+ *   <li>{@link gaSalesMan.impl.IncompleteTourImpl#getModel <em>Model</em>}</li>
  *   <li>{@link gaSalesMan.impl.IncompleteTourImpl#getCities <em>Cities</em>}</li>
  *   <li>{@link gaSalesMan.impl.IncompleteTourImpl#getMaps <em>Maps</em>}</li>
  * </ul>
@@ -39,24 +43,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour {
 	/**
-	 * The default value of the '{@link #getModelA() <em>Model A</em>}' attribute.
+	 * The default value of the '{@link #getModel() <em>Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModelA()
+	 * @see #getModel()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MODEL_A_EDEFAULT = null;
+	protected static final String MODEL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getModelA() <em>Model A</em>}' attribute.
+	 * The cached value of the '{@link #getModel() <em>Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModelA()
+	 * @see #getModel()
 	 * @generated
 	 * @ordered
 	 */
-	protected String modelA = MODEL_A_EDEFAULT;
+	protected String model = MODEL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCities() <em>Cities</em>}' containment reference list.
@@ -102,8 +106,8 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getModelA() {
-		return modelA;
+	public String getModel() {
+		return model;
 	}
 
 	/**
@@ -111,11 +115,11 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModelA(String newModelA) {
-		String oldModelA = modelA;
-		modelA = newModelA;
+	public void setModel(String newModel) {
+		String oldModel = model;
+		model = newModel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GaSalesManPackage.INCOMPLETE_TOUR__MODEL_A, oldModelA, modelA));
+			eNotify(new ENotificationImpl(this, Notification.SET, GaSalesManPackage.INCOMPLETE_TOUR__MODEL, oldModel, model));
 	}
 
 	/**
@@ -169,6 +173,30 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #isValidCity(gaSalesMan.City) <em>Is Valid City</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isValidCity(gaSalesMan.City)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate IS_VALID_CITY_CITY__EINVOCATION_DELEGATE = ((EOperation.Internal)GaSalesManPackage.Literals.INCOMPLETE_TOUR___IS_VALID_CITY__CITY).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isValidCity(City city) {
+		try {
+			return (Boolean)IS_VALID_CITY_CITY__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{city}));
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -190,8 +218,8 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL_A:
-				return getModelA();
+			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL:
+				return getModel();
 			case GaSalesManPackage.INCOMPLETE_TOUR__CITIES:
 				return getCities();
 			case GaSalesManPackage.INCOMPLETE_TOUR__MAPS:
@@ -210,8 +238,8 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL_A:
-				setModelA((String)newValue);
+			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL:
+				setModel((String)newValue);
 				return;
 			case GaSalesManPackage.INCOMPLETE_TOUR__CITIES:
 				getCities().clear();
@@ -232,8 +260,8 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL_A:
-				setModelA(MODEL_A_EDEFAULT);
+			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL:
+				setModel(MODEL_EDEFAULT);
 				return;
 			case GaSalesManPackage.INCOMPLETE_TOUR__CITIES:
 				getCities().clear();
@@ -253,8 +281,8 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL_A:
-				return MODEL_A_EDEFAULT == null ? modelA != null : !MODEL_A_EDEFAULT.equals(modelA);
+			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL:
+				return MODEL_EDEFAULT == null ? model != null : !MODEL_EDEFAULT.equals(model);
 			case GaSalesManPackage.INCOMPLETE_TOUR__CITIES:
 				return cities != null && !cities.isEmpty();
 			case GaSalesManPackage.INCOMPLETE_TOUR__MAPS:
@@ -269,12 +297,26 @@ public class IncompleteTourImpl extends ChromosomeImpl implements IncompleteTour
 	 * @generated
 	 */
 	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case GaSalesManPackage.INCOMPLETE_TOUR___IS_VALID_CITY__CITY:
+				return isValidCity((City)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (modelA: ");
-		result.append(modelA);
+		result.append(" (model: ");
+		result.append(model);
 		result.append(')');
 		return result.toString();
 	}

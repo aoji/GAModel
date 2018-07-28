@@ -158,44 +158,8 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getChromosome()
 	 * @generated
 	 */
-	int CHROMOSOME = 1;
+	int CHROMOSOME = 2;
 
-	/**
-	 * The feature id for the '<em><b>Genes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHROMOSOME__GENES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Chromosome</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHROMOSOME_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Fitness</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHROMOSOME___FITNESS = 0;
-
-	/**
-	 * The number of operations of the '<em>Chromosome</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHROMOSOME_OPERATION_COUNT = 1;
-	
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.GeneImpl <em>Gene</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -204,25 +168,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getGene()
 	 * @generated
 	 */
-	int GENE = 2;
-
-	/**
-	 * The number of structural features of the '<em>Gene</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Gene</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENE_OPERATION_COUNT = 0;
+	int GENE = 5;
 
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.CityImpl <em>City</em>}' class.
@@ -232,52 +178,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getCity()
 	 * @generated
 	 */
-	int CITY = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITY__NAME = GENE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>X</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITY__X = GENE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Y</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITY__Y = GENE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>City</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITY_FEATURE_COUNT = GENE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>City</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITY_OPERATION_COUNT = GENE_OPERATION_COUNT + 0;
+	int CITY = 6;
 
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.IncompleteTourImpl <em>Incomplete Tour</em>}' class.
@@ -287,70 +188,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getIncompleteTour()
 	 * @generated
 	 */
-	int INCOMPLETE_TOUR = 4;
-
-	/**
-	 * The feature id for the '<em><b>Genes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMPLETE_TOUR__GENES = CHROMOSOME__GENES;
-
-	/**
-	 * The feature id for the '<em><b>Model A</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMPLETE_TOUR__MODEL_A = CHROMOSOME_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Cities</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMPLETE_TOUR__CITIES = CHROMOSOME_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Maps</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMPLETE_TOUR__MAPS = CHROMOSOME_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Incomplete Tour</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMPLETE_TOUR_FEATURE_COUNT = CHROMOSOME_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Fitness</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMPLETE_TOUR___FITNESS = CHROMOSOME___FITNESS;
-
-	/**
-	 * The number of operations of the '<em>Incomplete Tour</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMPLETE_TOUR_OPERATION_COUNT = CHROMOSOME_OPERATION_COUNT + 0;
+	int INCOMPLETE_TOUR = 3;
 
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.CompleteTourImpl <em>Complete Tour</em>}' class.
@@ -360,79 +198,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getCompleteTour()
 	 * @generated
 	 */
-	int COMPLETE_TOUR = 5;
-
-	/**
-	 * The feature id for the '<em><b>Genes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR__GENES = CHROMOSOME__GENES;
-
-	/**
-	 * The feature id for the '<em><b>Model B</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR__MODEL_B = CHROMOSOME_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Cities</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR__CITIES = CHROMOSOME_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Maps</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR__MAPS = CHROMOSOME_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Complete Tour</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR_FEATURE_COUNT = CHROMOSOME_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Fitness</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR___FITNESS = CHROMOSOME___FITNESS;
-
-	/**
-	 * The operation id for the '<em>Initialize</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR___INITIALIZE = CHROMOSOME_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Complete Tour</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPLETE_TOUR_OPERATION_COUNT = CHROMOSOME_OPERATION_COUNT + 1;
+	int COMPLETE_TOUR = 4;
 
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.OptimizerImpl <em>Optimizer</em>}' class.
@@ -442,70 +208,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getOptimizer()
 	 * @generated
 	 */
-	int OPTIMIZER = 6;
-
-	/**
-	 * The feature id for the '<em><b>Max Generations</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER__MAX_GENERATIONS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Iterations</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER__ITERATIONS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Populations</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER__POPULATIONS = 2;
-
-	/**
-	 * The number of structural features of the '<em>Optimizer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER_FEATURE_COUNT = 3;
-
-	/**
-	 * The operation id for the '<em>Setup Population</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER___SETUP_POPULATION = 0;
-
-	/**
-	 * The operation id for the '<em>Evolve Population</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER___EVOLVE_POPULATION = 1;
-
-	/**
-	 * The number of operations of the '<em>Optimizer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPTIMIZER_OPERATION_COUNT = 2;
+	int OPTIMIZER = 7;
 
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.CitiesMapImpl <em>Cities Map</em>}' class.
@@ -515,70 +218,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getCitiesMap()
 	 * @generated
 	 */
-	int CITIES_MAP = 7;
-
-	/**
-	 * The feature id for the '<em><b>XRange</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITIES_MAP__XRANGE = 0;
-
-	/**
-	 * The feature id for the '<em><b>YRange</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITIES_MAP__YRANGE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Num Cities</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITIES_MAP__NUM_CITIES = 2;
-
-	/**
-	 * The feature id for the '<em><b>Cities</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITIES_MAP__CITIES = 3;
-
-	/**
-	 * The number of structural features of the '<em>Cities Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITIES_MAP_FEATURE_COUNT = 4;
-
-	/**
-	 * The operation id for the '<em>Initialize</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITIES_MAP___INITIALIZE = 0;
-
-	/**
-	 * The number of operations of the '<em>Cities Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CITIES_MAP_OPERATION_COUNT = 1;
+	int CITIES_MAP = 9;
 
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.TourPopulationImpl <em>Tour Population</em>}' class.
@@ -588,7 +228,7 @@ public interface GaSalesManPackage extends EPackage {
 	 * @see gaSalesMan.impl.GaSalesManPackageImpl#getTourPopulation()
 	 * @generated
 	 */
-	int TOUR_POPULATION = 9;
+	int TOUR_POPULATION = 1;
 
 	/**
 	 * The meta object id for the '{@link gaSalesMan.impl.TourOptimizerImpl <em>Tour Optimizer</em>}' class.
@@ -599,87 +239,6 @@ public interface GaSalesManPackage extends EPackage {
 	 * @generated
 	 */
 	int TOUR_OPTIMIZER = 8;
-
-	/**
-	 * The feature id for the '<em><b>Max Generations</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER__MAX_GENERATIONS = OPTIMIZER__MAX_GENERATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Iterations</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER__ITERATIONS = OPTIMIZER__ITERATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Populations</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER__POPULATIONS = OPTIMIZER__POPULATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Maps</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER__MAPS = OPTIMIZER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Tourpopulations</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER__TOURPOPULATIONS = OPTIMIZER_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Tour Optimizer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER_FEATURE_COUNT = OPTIMIZER_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Setup Population</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER___SETUP_POPULATION = OPTIMIZER___SETUP_POPULATION;
-
-	/**
-	 * The operation id for the '<em>Evolve Population</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER___EVOLVE_POPULATION = OPTIMIZER___EVOLVE_POPULATION;
-
-	/**
-	 * The number of operations of the '<em>Tour Optimizer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOUR_OPTIMIZER_OPERATION_COUNT = OPTIMIZER_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>PSize</b></em>' attribute.
@@ -771,6 +330,492 @@ public interface GaSalesManPackage extends EPackage {
 	 * @ordered
 	 */
 	int TOUR_POPULATION_OPERATION_COUNT = POPULATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Fitness</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHROMOSOME__FITNESS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Genes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHROMOSOME__GENES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Chromosome</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHROMOSOME_FEATURE_COUNT = 2;
+
+	/**
+	 * The operation id for the '<em>Fitness</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHROMOSOME___FITNESS = 0;
+
+	/**
+	 * The number of operations of the '<em>Chromosome</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHROMOSOME_OPERATION_COUNT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Fitness</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR__FITNESS = CHROMOSOME__FITNESS;
+
+	/**
+	 * The feature id for the '<em><b>Genes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR__GENES = CHROMOSOME__GENES;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR__MODEL = CHROMOSOME_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Cities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR__CITIES = CHROMOSOME_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Maps</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR__MAPS = CHROMOSOME_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Incomplete Tour</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR_FEATURE_COUNT = CHROMOSOME_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Fitness</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR___FITNESS = CHROMOSOME___FITNESS;
+
+	/**
+	 * The operation id for the '<em>Is Valid City</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR___IS_VALID_CITY__CITY = CHROMOSOME_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Incomplete Tour</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMPLETE_TOUR_OPERATION_COUNT = CHROMOSOME_OPERATION_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Fitness</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR__FITNESS = CHROMOSOME__FITNESS;
+
+	/**
+	 * The feature id for the '<em><b>Genes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR__GENES = CHROMOSOME__GENES;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR__MODEL = CHROMOSOME_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Cities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR__CITIES = CHROMOSOME_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Maps</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR__MAPS = CHROMOSOME_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Complete Tour</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR_FEATURE_COUNT = CHROMOSOME_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Fitness</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR___FITNESS = CHROMOSOME___FITNESS;
+
+	/**
+	 * The operation id for the '<em>Is Valid City</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR___IS_VALID_CITY__CITY = CHROMOSOME_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Complete Tour</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLETE_TOUR_OPERATION_COUNT = CHROMOSOME_OPERATION_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Gene</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Gene</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENE_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITY__NAME = GENE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITY__X = GENE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITY__Y = GENE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>City</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITY_FEATURE_COUNT = GENE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>City</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITY_OPERATION_COUNT = GENE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Max Generations</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIMIZER__MAX_GENERATIONS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Iterations</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIMIZER__ITERATIONS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Populations</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIMIZER__POPULATIONS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Optimizer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIMIZER_FEATURE_COUNT = 3;
+
+	/**
+	 * The operation id for the '<em>Setup Population</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIMIZER___SETUP_POPULATION = 0;
+
+	/**
+	 * The operation id for the '<em>Evolve Population</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIMIZER___EVOLVE_POPULATION = 1;
+
+	/**
+	 * The number of operations of the '<em>Optimizer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIMIZER_OPERATION_COUNT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Max Generations</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__MAX_GENERATIONS = OPTIMIZER__MAX_GENERATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Iterations</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__ITERATIONS = OPTIMIZER__ITERATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Populations</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__POPULATIONS = OPTIMIZER__POPULATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Maps</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__MAPS = OPTIMIZER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Tourpopulations</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER__TOURPOPULATIONS = OPTIMIZER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Tour Optimizer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER_FEATURE_COUNT = OPTIMIZER_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Setup Population</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER___SETUP_POPULATION = OPTIMIZER___SETUP_POPULATION;
+
+	/**
+	 * The operation id for the '<em>Evolve Population</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER___EVOLVE_POPULATION = OPTIMIZER___EVOLVE_POPULATION;
+
+	/**
+	 * The number of operations of the '<em>Tour Optimizer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOUR_OPTIMIZER_OPERATION_COUNT = OPTIMIZER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Num Cities</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP__NUM_CITIES = 0;
+
+	/**
+	 * The feature id for the '<em><b>XRange</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP__XRANGE = 1;
+
+	/**
+	 * The feature id for the '<em><b>YRange</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP__YRANGE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Cities</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP__CITIES = 3;
+
+	/**
+	 * The number of structural features of the '<em>Cities Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP_FEATURE_COUNT = 4;
+
+	/**
+	 * The operation id for the '<em>Initialize</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP___INITIALIZE = 0;
+
+	/**
+	 * The operation id for the '<em>Appears Once</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP___APPEARS_ONCE__CITY = 1;
+
+	/**
+	 * The number of operations of the '<em>Cities Map</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CITIES_MAP_OPERATION_COUNT = 2;
 	
 	/**
 	 * Returns the meta object for class '{@link gaSalesMan.Population <em>Population</em>}'.
@@ -866,6 +911,17 @@ public interface GaSalesManPackage extends EPackage {
 	EClass getChromosome();
 
 	/**
+	 * Returns the meta object for the attribute '{@link gaSalesMan.Chromosome#getFitness <em>Fitness</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fitness</em>'.
+	 * @see gaSalesMan.Chromosome#getFitness()
+	 * @see #getChromosome()
+	 * @generated
+	 */
+	EAttribute getChromosome_Fitness();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link gaSalesMan.Chromosome#getGenes <em>Genes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -950,15 +1006,15 @@ public interface GaSalesManPackage extends EPackage {
 	EClass getIncompleteTour();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gaSalesMan.IncompleteTour#getModelA <em>Model A</em>}'.
+	 * Returns the meta object for the attribute '{@link gaSalesMan.IncompleteTour#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Model A</em>'.
-	 * @see gaSalesMan.IncompleteTour#getModelA()
+	 * @return the meta object for the attribute '<em>Model</em>'.
+	 * @see gaSalesMan.IncompleteTour#getModel()
 	 * @see #getIncompleteTour()
 	 * @generated
 	 */
-	EAttribute getIncompleteTour_ModelA();
+	EAttribute getIncompleteTour_Model();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link gaSalesMan.IncompleteTour#getCities <em>Cities</em>}'.
@@ -983,6 +1039,16 @@ public interface GaSalesManPackage extends EPackage {
 	EReference getIncompleteTour_Maps();
 
 	/**
+	 * Returns the meta object for the '{@link gaSalesMan.IncompleteTour#isValidCity(gaSalesMan.City) <em>Is Valid City</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Valid City</em>' operation.
+	 * @see gaSalesMan.IncompleteTour#isValidCity(gaSalesMan.City)
+	 * @generated
+	 */
+	EOperation getIncompleteTour__IsValidCity__City();
+
+	/**
 	 * Returns the meta object for class '{@link gaSalesMan.CompleteTour <em>Complete Tour</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,15 +1059,15 @@ public interface GaSalesManPackage extends EPackage {
 	EClass getCompleteTour();
 
 	/**
-	 * Returns the meta object for the attribute '{@link gaSalesMan.CompleteTour#getModelB <em>Model B</em>}'.
+	 * Returns the meta object for the attribute '{@link gaSalesMan.CompleteTour#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Model B</em>'.
-	 * @see gaSalesMan.CompleteTour#getModelB()
+	 * @return the meta object for the attribute '<em>Model</em>'.
+	 * @see gaSalesMan.CompleteTour#getModel()
 	 * @see #getCompleteTour()
 	 * @generated
 	 */
-	EAttribute getCompleteTour_ModelB();
+	EAttribute getCompleteTour_Model();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link gaSalesMan.CompleteTour#getCities <em>Cities</em>}'.
@@ -1026,14 +1092,14 @@ public interface GaSalesManPackage extends EPackage {
 	EReference getCompleteTour_Maps();
 
 	/**
-	 * Returns the meta object for the '{@link gaSalesMan.CompleteTour#initialize() <em>Initialize</em>}' operation.
+	 * Returns the meta object for the '{@link gaSalesMan.CompleteTour#isValidCity(gaSalesMan.City) <em>Is Valid City</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Initialize</em>' operation.
-	 * @see gaSalesMan.CompleteTour#initialize()
+	 * @return the meta object for the '<em>Is Valid City</em>' operation.
+	 * @see gaSalesMan.CompleteTour#isValidCity(gaSalesMan.City)
 	 * @generated
 	 */
-	EOperation getCompleteTour__Initialize();
+	EOperation getCompleteTour__IsValidCity__City();
 
 	/**
 	 * Returns the meta object for class '{@link gaSalesMan.Optimizer <em>Optimizer</em>}'.
@@ -1161,6 +1227,16 @@ public interface GaSalesManPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getCitiesMap__Initialize();
+
+	/**
+	 * Returns the meta object for the '{@link gaSalesMan.CitiesMap#appearsOnce(gaSalesMan.City) <em>Appears Once</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Appears Once</em>' operation.
+	 * @see gaSalesMan.CitiesMap#appearsOnce(gaSalesMan.City)
+	 * @generated
+	 */
+	EOperation getCitiesMap__AppearsOnce__City();
 
 	/**
 	 * Returns the meta object for class '{@link gaSalesMan.TourPopulation <em>Tour Population</em>}'.
@@ -1315,6 +1391,14 @@ public interface GaSalesManPackage extends EPackage {
 		EClass CHROMOSOME = eINSTANCE.getChromosome();
 
 		/**
+		 * The meta object literal for the '<em><b>Fitness</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHROMOSOME__FITNESS = eINSTANCE.getChromosome_Fitness();
+
+		/**
 		 * The meta object literal for the '<em><b>Genes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1385,12 +1469,12 @@ public interface GaSalesManPackage extends EPackage {
 		EClass INCOMPLETE_TOUR = eINSTANCE.getIncompleteTour();
 
 		/**
-		 * The meta object literal for the '<em><b>Model A</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INCOMPLETE_TOUR__MODEL_A = eINSTANCE.getIncompleteTour_ModelA();
+		EAttribute INCOMPLETE_TOUR__MODEL = eINSTANCE.getIncompleteTour_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Cities</b></em>' containment reference list feature.
@@ -1409,6 +1493,14 @@ public interface GaSalesManPackage extends EPackage {
 		EReference INCOMPLETE_TOUR__MAPS = eINSTANCE.getIncompleteTour_Maps();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Valid City</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation INCOMPLETE_TOUR___IS_VALID_CITY__CITY = eINSTANCE.getIncompleteTour__IsValidCity__City();
+
+		/**
 		 * The meta object literal for the '{@link gaSalesMan.impl.CompleteTourImpl <em>Complete Tour</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1419,12 +1511,12 @@ public interface GaSalesManPackage extends EPackage {
 		EClass COMPLETE_TOUR = eINSTANCE.getCompleteTour();
 
 		/**
-		 * The meta object literal for the '<em><b>Model B</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPLETE_TOUR__MODEL_B = eINSTANCE.getCompleteTour_ModelB();
+		EAttribute COMPLETE_TOUR__MODEL = eINSTANCE.getCompleteTour_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>Cities</b></em>' containment reference list feature.
@@ -1443,12 +1535,12 @@ public interface GaSalesManPackage extends EPackage {
 		EReference COMPLETE_TOUR__MAPS = eINSTANCE.getCompleteTour_Maps();
 
 		/**
-		 * The meta object literal for the '<em><b>Initialize</b></em>' operation.
+		 * The meta object literal for the '<em><b>Is Valid City</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation COMPLETE_TOUR___INITIALIZE = eINSTANCE.getCompleteTour__Initialize();
+		EOperation COMPLETE_TOUR___IS_VALID_CITY__CITY = eINSTANCE.getCompleteTour__IsValidCity__City();
 
 		/**
 		 * The meta object literal for the '{@link gaSalesMan.impl.OptimizerImpl <em>Optimizer</em>}' class.
@@ -1549,6 +1641,14 @@ public interface GaSalesManPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CITIES_MAP___INITIALIZE = eINSTANCE.getCitiesMap__Initialize();
+
+		/**
+		 * The meta object literal for the '<em><b>Appears Once</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CITIES_MAP___APPEARS_ONCE__CITY = eINSTANCE.getCitiesMap__AppearsOnce__City();
 
 		/**
 		 * The meta object literal for the '{@link gaSalesMan.impl.TourPopulationImpl <em>Tour Population</em>}' class.

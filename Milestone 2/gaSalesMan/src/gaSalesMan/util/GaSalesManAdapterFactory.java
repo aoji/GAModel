@@ -72,16 +72,12 @@ public class GaSalesManAdapterFactory extends AdapterFactoryImpl {
 				return createPopulationAdapter();
 			}
 			@Override
+			public Adapter caseTourPopulation(TourPopulation object) {
+				return createTourPopulationAdapter();
+			}
+			@Override
 			public Adapter caseChromosome(Chromosome object) {
 				return createChromosomeAdapter();
-			}
-			@Override
-			public Adapter caseGene(Gene object) {
-				return createGeneAdapter();
-			}
-			@Override
-			public Adapter caseCity(City object) {
-				return createCityAdapter();
 			}
 			@Override
 			public Adapter caseIncompleteTour(IncompleteTour object) {
@@ -92,20 +88,24 @@ public class GaSalesManAdapterFactory extends AdapterFactoryImpl {
 				return createCompleteTourAdapter();
 			}
 			@Override
-			public Adapter caseOptimizer(Optimizer object) {
-				return createOptimizerAdapter();
+			public Adapter caseGene(Gene object) {
+				return createGeneAdapter();
 			}
 			@Override
-			public Adapter caseCitiesMap(CitiesMap object) {
-				return createCitiesMapAdapter();
+			public Adapter caseCity(City object) {
+				return createCityAdapter();
+			}
+			@Override
+			public Adapter caseOptimizer(Optimizer object) {
+				return createOptimizerAdapter();
 			}
 			@Override
 			public Adapter caseTourOptimizer(TourOptimizer object) {
 				return createTourOptimizerAdapter();
 			}
 			@Override
-			public Adapter caseTourPopulation(TourPopulation object) {
-				return createTourPopulationAdapter();
+			public Adapter caseCitiesMap(CitiesMap object) {
+				return createCitiesMapAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

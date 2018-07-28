@@ -72,22 +72,16 @@ public class GaSalesManSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case GaSalesManPackage.TOUR_POPULATION: {
+				TourPopulation tourPopulation = (TourPopulation)theEObject;
+				T result = caseTourPopulation(tourPopulation);
+				if (result == null) result = casePopulation(tourPopulation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case GaSalesManPackage.CHROMOSOME: {
 				Chromosome chromosome = (Chromosome)theEObject;
 				T result = caseChromosome(chromosome);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GaSalesManPackage.GENE: {
-				Gene gene = (Gene)theEObject;
-				T result = caseGene(gene);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case GaSalesManPackage.CITY: {
-				City city = (City)theEObject;
-				T result = caseCity(city);
-				if (result == null) result = caseGene(city);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,15 +99,22 @@ public class GaSalesManSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GaSalesManPackage.OPTIMIZER: {
-				Optimizer optimizer = (Optimizer)theEObject;
-				T result = caseOptimizer(optimizer);
+			case GaSalesManPackage.GENE: {
+				Gene gene = (Gene)theEObject;
+				T result = caseGene(gene);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GaSalesManPackage.CITIES_MAP: {
-				CitiesMap citiesMap = (CitiesMap)theEObject;
-				T result = caseCitiesMap(citiesMap);
+			case GaSalesManPackage.CITY: {
+				City city = (City)theEObject;
+				T result = caseCity(city);
+				if (result == null) result = caseGene(city);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case GaSalesManPackage.OPTIMIZER: {
+				Optimizer optimizer = (Optimizer)theEObject;
+				T result = caseOptimizer(optimizer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,10 +125,9 @@ public class GaSalesManSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GaSalesManPackage.TOUR_POPULATION: {
-				TourPopulation tourPopulation = (TourPopulation)theEObject;
-				T result = caseTourPopulation(tourPopulation);
-				if (result == null) result = casePopulation(tourPopulation);
+			case GaSalesManPackage.CITIES_MAP: {
+				CitiesMap citiesMap = (CitiesMap)theEObject;
+				T result = caseCitiesMap(citiesMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

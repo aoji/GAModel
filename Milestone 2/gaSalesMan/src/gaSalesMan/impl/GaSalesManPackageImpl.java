@@ -258,8 +258,17 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getChromosome_Fitness() {
+		return (EAttribute)chromosomeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getChromosome_Genes() {
-		return (EReference)chromosomeEClass.getEStructuralFeatures().get(0);
+		return (EReference)chromosomeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -330,7 +339,7 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIncompleteTour_ModelA() {
+	public EAttribute getIncompleteTour_Model() {
 		return (EAttribute)incompleteTourEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -357,6 +366,15 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIncompleteTour__IsValidCity__City() {
+		return incompleteTourEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCompleteTour() {
 		return completeTourEClass;
 	}
@@ -366,7 +384,7 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCompleteTour_ModelB() {
+	public EAttribute getCompleteTour_Model() {
 		return (EAttribute)completeTourEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -393,7 +411,7 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCompleteTour__Initialize() {
+	public EOperation getCompleteTour__IsValidCity__City() {
 		return completeTourEClass.getEOperations().get(0);
 	}
 
@@ -475,15 +493,6 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 * @generated
 	 */
 	public EAttribute getCitiesMap_XRange() {
-		return (EAttribute)citiesMapEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCitiesMap_YRange() {
 		return (EAttribute)citiesMapEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -492,8 +501,17 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCitiesMap_NumCities() {
+	public EAttribute getCitiesMap_YRange() {
 		return (EAttribute)citiesMapEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCitiesMap_NumCities() {
+		return (EAttribute)citiesMapEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -503,6 +521,15 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 	 */
 	public EOperation getCitiesMap__Initialize() {
 		return citiesMapEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCitiesMap__AppearsOnce__City() {
+		return citiesMapEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -587,9 +614,25 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 		createEOperation(populationEClass, POPULATION___FIND_FITTEST);
 		createEOperation(populationEClass, POPULATION___GENERATE_CHROMOSOMES);
 
+		tourPopulationEClass = createEClass(TOUR_POPULATION);
+		createEReference(tourPopulationEClass, TOUR_POPULATION__MAPS);
+
 		chromosomeEClass = createEClass(CHROMOSOME);
+		createEAttribute(chromosomeEClass, CHROMOSOME__FITNESS);
 		createEReference(chromosomeEClass, CHROMOSOME__GENES);
 		createEOperation(chromosomeEClass, CHROMOSOME___FITNESS);
+
+		incompleteTourEClass = createEClass(INCOMPLETE_TOUR);
+		createEAttribute(incompleteTourEClass, INCOMPLETE_TOUR__MODEL);
+		createEReference(incompleteTourEClass, INCOMPLETE_TOUR__CITIES);
+		createEReference(incompleteTourEClass, INCOMPLETE_TOUR__MAPS);
+		createEOperation(incompleteTourEClass, INCOMPLETE_TOUR___IS_VALID_CITY__CITY);
+
+		completeTourEClass = createEClass(COMPLETE_TOUR);
+		createEAttribute(completeTourEClass, COMPLETE_TOUR__MODEL);
+		createEReference(completeTourEClass, COMPLETE_TOUR__CITIES);
+		createEReference(completeTourEClass, COMPLETE_TOUR__MAPS);
+		createEOperation(completeTourEClass, COMPLETE_TOUR___IS_VALID_CITY__CITY);
 
 		geneEClass = createEClass(GENE);
 
@@ -598,17 +641,6 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 		createEAttribute(cityEClass, CITY__X);
 		createEAttribute(cityEClass, CITY__Y);
 
-		incompleteTourEClass = createEClass(INCOMPLETE_TOUR);
-		createEAttribute(incompleteTourEClass, INCOMPLETE_TOUR__MODEL_A);
-		createEReference(incompleteTourEClass, INCOMPLETE_TOUR__CITIES);
-		createEReference(incompleteTourEClass, INCOMPLETE_TOUR__MAPS);
-
-		completeTourEClass = createEClass(COMPLETE_TOUR);
-		createEAttribute(completeTourEClass, COMPLETE_TOUR__MODEL_B);
-		createEReference(completeTourEClass, COMPLETE_TOUR__CITIES);
-		createEReference(completeTourEClass, COMPLETE_TOUR__MAPS);
-		createEOperation(completeTourEClass, COMPLETE_TOUR___INITIALIZE);
-
 		optimizerEClass = createEClass(OPTIMIZER);
 		createEAttribute(optimizerEClass, OPTIMIZER__MAX_GENERATIONS);
 		createEAttribute(optimizerEClass, OPTIMIZER__ITERATIONS);
@@ -616,19 +648,17 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 		createEOperation(optimizerEClass, OPTIMIZER___SETUP_POPULATION);
 		createEOperation(optimizerEClass, OPTIMIZER___EVOLVE_POPULATION);
 
-		citiesMapEClass = createEClass(CITIES_MAP);
-		createEAttribute(citiesMapEClass, CITIES_MAP__XRANGE);
-		createEAttribute(citiesMapEClass, CITIES_MAP__YRANGE);
-		createEAttribute(citiesMapEClass, CITIES_MAP__NUM_CITIES);
-		createEReference(citiesMapEClass, CITIES_MAP__CITIES);
-		createEOperation(citiesMapEClass, CITIES_MAP___INITIALIZE);
-
 		tourOptimizerEClass = createEClass(TOUR_OPTIMIZER);
 		createEReference(tourOptimizerEClass, TOUR_OPTIMIZER__MAPS);
 		createEReference(tourOptimizerEClass, TOUR_OPTIMIZER__TOURPOPULATIONS);
 
-		tourPopulationEClass = createEClass(TOUR_POPULATION);
-		createEReference(tourPopulationEClass, TOUR_POPULATION__MAPS);
+		citiesMapEClass = createEClass(CITIES_MAP);
+		createEAttribute(citiesMapEClass, CITIES_MAP__NUM_CITIES);
+		createEAttribute(citiesMapEClass, CITIES_MAP__XRANGE);
+		createEAttribute(citiesMapEClass, CITIES_MAP__YRANGE);
+		createEReference(citiesMapEClass, CITIES_MAP__CITIES);
+		createEOperation(citiesMapEClass, CITIES_MAP___INITIALIZE);
+		createEOperation(citiesMapEClass, CITIES_MAP___APPEARS_ONCE__CITY);
 	}
 
 	/**
@@ -659,11 +689,11 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		cityEClass.getESuperTypes().add(this.getGene());
+		tourPopulationEClass.getESuperTypes().add(this.getPopulation());
 		incompleteTourEClass.getESuperTypes().add(this.getChromosome());
 		completeTourEClass.getESuperTypes().add(this.getChromosome());
+		cityEClass.getESuperTypes().add(this.getGene());
 		tourOptimizerEClass.getESuperTypes().add(this.getOptimizer());
-		tourPopulationEClass.getESuperTypes().add(this.getPopulation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(populationEClass, Population.class, "Population", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -679,10 +709,30 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 
 		initEOperation(getPopulation__GenerateChromosomes(), null, "generateChromosomes", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(tourPopulationEClass, TourPopulation.class, "TourPopulation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTourPopulation_Maps(), this.getCitiesMap(), null, "maps", null, 1, 1, TourPopulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(chromosomeEClass, Chromosome.class, "Chromosome", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getChromosome_Fitness(), ecorePackage.getEDouble(), "fitness", null, 0, 1, Chromosome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getChromosome_Genes(), this.getGene(), null, "genes", null, 0, -1, Chromosome.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getChromosome__Fitness(), ecorePackage.getEDouble(), "fitness", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(incompleteTourEClass, IncompleteTour.class, "IncompleteTour", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIncompleteTour_Model(), ecorePackage.getEString(), "model", null, 0, 1, IncompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncompleteTour_Cities(), this.getCity(), null, "cities", null, 0, -1, IncompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncompleteTour_Maps(), this.getCitiesMap(), null, "maps", null, 1, 1, IncompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getIncompleteTour__IsValidCity__City(), ecorePackage.getEBoolean(), "isValidCity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCity(), "city", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(completeTourEClass, CompleteTour.class, "CompleteTour", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCompleteTour_Model(), ecorePackage.getEString(), "model", null, 0, 1, CompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompleteTour_Cities(), this.getCity(), null, "cities", null, 0, -1, CompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompleteTour_Maps(), this.getCitiesMap(), null, "maps", null, 1, 1, CompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getCompleteTour__IsValidCity__City(), ecorePackage.getEBoolean(), "isValidCity", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCity(), "city", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(geneEClass, Gene.class, "Gene", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -690,18 +740,6 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 		initEAttribute(getCity_Name(), ecorePackage.getEString(), "name", null, 0, 1, City.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCity_X(), ecorePackage.getEFloat(), "x", null, 0, 1, City.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCity_Y(), ecorePackage.getEFloat(), "y", null, 0, 1, City.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(incompleteTourEClass, IncompleteTour.class, "IncompleteTour", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIncompleteTour_ModelA(), ecorePackage.getEString(), "modelA", null, 0, 1, IncompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncompleteTour_Cities(), this.getCity(), null, "cities", null, 0, -1, IncompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIncompleteTour_Maps(), this.getCitiesMap(), null, "maps", null, 1, 1, IncompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(completeTourEClass, CompleteTour.class, "CompleteTour", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCompleteTour_ModelB(), ecorePackage.getEString(), "modelB", null, 0, 1, CompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCompleteTour_Cities(), this.getCity(), null, "cities", null, 0, -1, CompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCompleteTour_Maps(), this.getCitiesMap(), null, "maps", null, 1, 1, CompleteTour.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getCompleteTour__Initialize(), null, "initialize", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(optimizerEClass, Optimizer.class, "Optimizer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOptimizer_MaxGenerations(), ecorePackage.getEInt(), "maxGenerations", null, 0, 1, Optimizer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -712,20 +750,20 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 
 		initEOperation(getOptimizer__EvolvePopulation(), null, "evolvePopulation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(citiesMapEClass, CitiesMap.class, "CitiesMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCitiesMap_XRange(), ecorePackage.getEFloat(), "xRange", "5.0", 0, 1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCitiesMap_YRange(), ecorePackage.getEFloat(), "yRange", "5.0", 0, 1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCitiesMap_NumCities(), ecorePackage.getEInt(), "numCities", "5", 0, 1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCitiesMap_Cities(), this.getCity(), null, "cities", null, 0, -1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getCitiesMap__Initialize(), null, "initialize", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(tourOptimizerEClass, TourOptimizer.class, "TourOptimizer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTourOptimizer_Maps(), this.getCitiesMap(), null, "maps", null, 1, 1, TourOptimizer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTourOptimizer_Tourpopulations(), this.getTourPopulation(), null, "tourpopulations", null, 1, 1, TourOptimizer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(tourPopulationEClass, TourPopulation.class, "TourPopulation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTourPopulation_Maps(), this.getCitiesMap(), null, "maps", null, 1, 1, TourPopulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(citiesMapEClass, CitiesMap.class, "CitiesMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCitiesMap_NumCities(), ecorePackage.getEInt(), "numCities", "5", 0, 1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCitiesMap_XRange(), ecorePackage.getEFloat(), "xRange", "5.0", 0, 1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCitiesMap_YRange(), ecorePackage.getEFloat(), "yRange", "5.0", 0, 1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCitiesMap_Cities(), this.getCity(), null, "cities", null, 0, -1, CitiesMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getCitiesMap__Initialize(), null, "initialize", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCitiesMap__AppearsOnce__City(), ecorePackage.getEBoolean(), "appearsOnce", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getCity(), "city", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -781,25 +819,25 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 		  (incompleteTourEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "checkCities"
+			 "constraints", "numOfCities validateCities"
 		   });	
 		addAnnotation
 		  (completeTourEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "checkCities"
+			 "constraints", "numOfCities validateCities"
 		   });	
 		addAnnotation
 		  (optimizerEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "numOfPopulations"
+			 "constraints", "numOfGenerations"
 		   });	
 		addAnnotation
 		  (citiesMapEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "numOfCities xyCoordinates"
+			 "constraints", "numOfCities xyCoordinates validateCity"
 		   });
 	}
 
@@ -821,26 +859,47 @@ public class GaSalesManPackageImpl extends EPackageImpl implements GaSalesManPac
 		  (incompleteTourEClass, 
 		   source, 
 		   new String[] {
-			 "checkCities", "self.cities->size() <= self.maps.numCities"
+			 "numOfCities", "self.cities->size() <= self.maps.numCities",
+			 "validateCities", "self.cities->forAll(c | (isValidCity(c)))"
+		   });	
+		addAnnotation
+		  (getIncompleteTour__IsValidCity__City(), 
+		   source, 
+		   new String[] {
+			 "body", "(self.maps.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() = 1) and\n\t\t\t\t\t(self.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() >= 1)"
 		   });	
 		addAnnotation
 		  (completeTourEClass, 
 		   source, 
 		   new String[] {
-			 "checkCities", "self.cities->size() = self.maps.numCities"
+			 "numOfCities", "self.cities->size() = self.maps.numCities",
+			 "validateCities", "self.cities->forAll(c | (isValidCity(c)))"
+		   });	
+		addAnnotation
+		  (getCompleteTour__IsValidCity__City(), 
+		   source, 
+		   new String[] {
+			 "body", "(self.maps.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() = 1) and \n\t\t\t\t\t(self.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() = 1)"
 		   });	
 		addAnnotation
 		  (optimizerEClass, 
 		   source, 
 		   new String[] {
-			 "numOfPopulations", "self.iterations <= self.maxGenerations"
+			 "numOfGenerations", "self.iterations <= self.maxGenerations"
 		   });	
 		addAnnotation
 		  (citiesMapEClass, 
 		   source, 
 		   new String[] {
 			 "numOfCities", "self.cities->size() = self.numCities",
-			 "xyCoordinates", "self.cities->forAll(c | (c.x <= self.xRange) and (c.y <= self.yRange))"
+			 "xyCoordinates", "self.cities->forAll(c | (c.x <= self.xRange) and (c.y <= self.yRange))",
+			 "validateCity", "self.cities->forAll(c | appearsOnce(c))"
+		   });	
+		addAnnotation
+		  (getCitiesMap__AppearsOnce__City(), 
+		   source, 
+		   new String[] {
+			 "body", "self.cities->select(c | (c.name = city.name) and (c.x = city.x) and (c.y = city.y))->size() = 1"
 		   });
 	}
 

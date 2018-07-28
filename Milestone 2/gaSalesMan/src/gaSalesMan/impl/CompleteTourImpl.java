@@ -15,9 +15,12 @@ import java.util.Collections;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -33,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link gaSalesMan.impl.CompleteTourImpl#getModelB <em>Model B</em>}</li>
+ *   <li>{@link gaSalesMan.impl.CompleteTourImpl#getModel <em>Model</em>}</li>
  *   <li>{@link gaSalesMan.impl.CompleteTourImpl#getCities <em>Cities</em>}</li>
  *   <li>{@link gaSalesMan.impl.CompleteTourImpl#getMaps <em>Maps</em>}</li>
  * </ul>
@@ -42,24 +45,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	/**
-	 * The default value of the '{@link #getModelB() <em>Model B</em>}' attribute.
+	 * The default value of the '{@link #getModel() <em>Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModelB()
+	 * @see #getModel()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MODEL_B_EDEFAULT = null;
+	protected static final String MODEL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getModelB() <em>Model B</em>}' attribute.
+	 * The cached value of the '{@link #getModel() <em>Model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModelB()
+	 * @see #getModel()
 	 * @generated
 	 * @ordered
 	 */
-	protected String modelB = MODEL_B_EDEFAULT;
+	protected String model = MODEL_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCities() <em>Cities</em>}' containment reference list.
@@ -105,8 +108,8 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getModelB() {
-		return modelB;
+	public String getModel() {
+		return model;
 	}
 
 	/**
@@ -114,11 +117,11 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModelB(String newModelB) {
-		String oldModelB = modelB;
-		modelB = newModelB;
+	public void setModel(String newModel) {
+		String oldModel = model;
+		model = newModel;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GaSalesManPackage.COMPLETE_TOUR__MODEL_B, oldModelB, modelB));
+			eNotify(new ENotificationImpl(this, Notification.SET, GaSalesManPackage.COMPLETE_TOUR__MODEL, oldModel, model));
 	}
 
 	/**
@@ -172,6 +175,30 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #isValidCity(gaSalesMan.City) <em>Is Valid City</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isValidCity(gaSalesMan.City)
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate IS_VALID_CITY_CITY__EINVOCATION_DELEGATE = ((EOperation.Internal)GaSalesManPackage.Literals.COMPLETE_TOUR___IS_VALID_CITY__CITY).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isValidCity(City city) {
+		try {
+			return (Boolean)IS_VALID_CITY_CITY__EINVOCATION_DELEGATE.dynamicInvoke(this, new BasicEList.UnmodifiableEList<Object>(1, new Object[]{city}));
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
@@ -201,8 +228,8 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GaSalesManPackage.COMPLETE_TOUR__MODEL_B:
-				return getModelB();
+			case GaSalesManPackage.COMPLETE_TOUR__MODEL:
+				return getModel();
 			case GaSalesManPackage.COMPLETE_TOUR__CITIES:
 				return getCities();
 			case GaSalesManPackage.COMPLETE_TOUR__MAPS:
@@ -221,8 +248,8 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GaSalesManPackage.COMPLETE_TOUR__MODEL_B:
-				setModelB((String)newValue);
+			case GaSalesManPackage.COMPLETE_TOUR__MODEL:
+				setModel((String)newValue);
 				return;
 			case GaSalesManPackage.COMPLETE_TOUR__CITIES:
 				getCities().clear();
@@ -243,8 +270,8 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GaSalesManPackage.COMPLETE_TOUR__MODEL_B:
-				setModelB(MODEL_B_EDEFAULT);
+			case GaSalesManPackage.COMPLETE_TOUR__MODEL:
+				setModel(MODEL_EDEFAULT);
 				return;
 			case GaSalesManPackage.COMPLETE_TOUR__CITIES:
 				getCities().clear();
@@ -264,8 +291,8 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GaSalesManPackage.COMPLETE_TOUR__MODEL_B:
-				return MODEL_B_EDEFAULT == null ? modelB != null : !MODEL_B_EDEFAULT.equals(modelB);
+			case GaSalesManPackage.COMPLETE_TOUR__MODEL:
+				return MODEL_EDEFAULT == null ? model != null : !MODEL_EDEFAULT.equals(model);
 			case GaSalesManPackage.COMPLETE_TOUR__CITIES:
 				return cities != null && !cities.isEmpty();
 			case GaSalesManPackage.COMPLETE_TOUR__MAPS:
@@ -282,9 +309,8 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case GaSalesManPackage.COMPLETE_TOUR___INITIALIZE:
-				initialize();
-				return null;
+			case GaSalesManPackage.COMPLETE_TOUR___IS_VALID_CITY__CITY:
+				return isValidCity((City)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -299,8 +325,8 @@ public class CompleteTourImpl extends ChromosomeImpl implements CompleteTour {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (modelB: ");
-		result.append(modelB);
+		result.append(" (model: ");
+		result.append(model);
 		result.append(')');
 		return result.toString();
 	}
