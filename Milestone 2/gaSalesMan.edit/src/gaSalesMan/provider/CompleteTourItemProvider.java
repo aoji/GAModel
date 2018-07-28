@@ -48,26 +48,26 @@ public class CompleteTourItemProvider extends ChromosomeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addModelBPropertyDescriptor(object);
+			addModelPropertyDescriptor(object);
 			addMapsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Model B feature.
+	 * This adds a property descriptor for the Model feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModelBPropertyDescriptor(Object object) {
+	protected void addModelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_CompleteTour_modelB_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_CompleteTour_modelB_feature", "_UI_CompleteTour_type"),
-				 GaSalesManPackage.Literals.COMPLETE_TOUR__MODEL_B,
+				 getString("_UI_CompleteTour_model_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_CompleteTour_model_feature", "_UI_CompleteTour_type"),
+				 GaSalesManPackage.Literals.COMPLETE_TOUR__MODEL,
 				 true,
 				 false,
 				 false,
@@ -147,10 +147,8 @@ public class CompleteTourItemProvider extends ChromosomeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CompleteTour)object).getModelB();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CompleteTour_type") :
-			getString("_UI_CompleteTour_type") + " " + label;
+		CompleteTour completeTour = (CompleteTour)object;
+		return getString("_UI_CompleteTour_type") + " " + completeTour.getFitness();
 	}
 	
 
@@ -166,7 +164,7 @@ public class CompleteTourItemProvider extends ChromosomeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CompleteTour.class)) {
-			case GaSalesManPackage.COMPLETE_TOUR__MODEL_B:
+			case GaSalesManPackage.COMPLETE_TOUR__MODEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case GaSalesManPackage.COMPLETE_TOUR__CITIES:

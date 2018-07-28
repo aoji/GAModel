@@ -308,12 +308,12 @@ public class GaSalesManItemProviderAdapterFactory extends GaSalesManAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
-		if (cityItemProvider != null) cityItemProvider.dispose();
+		if (tourPopulationItemProvider != null) tourPopulationItemProvider.dispose();
 		if (incompleteTourItemProvider != null) incompleteTourItemProvider.dispose();
 		if (completeTourItemProvider != null) completeTourItemProvider.dispose();
-		if (citiesMapItemProvider != null) citiesMapItemProvider.dispose();
+		if (cityItemProvider != null) cityItemProvider.dispose();
 		if (tourOptimizerItemProvider != null) tourOptimizerItemProvider.dispose();
-		if (tourPopulationItemProvider != null) tourPopulationItemProvider.dispose();
+		if (citiesMapItemProvider != null) citiesMapItemProvider.dispose();
 	}
 
 }

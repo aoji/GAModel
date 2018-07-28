@@ -48,26 +48,26 @@ public class IncompleteTourItemProvider extends ChromosomeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addModelAPropertyDescriptor(object);
+			addModelPropertyDescriptor(object);
 			addMapsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Model A feature.
+	 * This adds a property descriptor for the Model feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModelAPropertyDescriptor(Object object) {
+	protected void addModelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_IncompleteTour_modelA_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncompleteTour_modelA_feature", "_UI_IncompleteTour_type"),
-				 GaSalesManPackage.Literals.INCOMPLETE_TOUR__MODEL_A,
+				 getString("_UI_IncompleteTour_model_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncompleteTour_model_feature", "_UI_IncompleteTour_type"),
+				 GaSalesManPackage.Literals.INCOMPLETE_TOUR__MODEL,
 				 true,
 				 false,
 				 false,
@@ -147,10 +147,8 @@ public class IncompleteTourItemProvider extends ChromosomeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IncompleteTour)object).getModelA();
-		return label == null || label.length() == 0 ?
-			getString("_UI_IncompleteTour_type") :
-			getString("_UI_IncompleteTour_type") + " " + label;
+		IncompleteTour incompleteTour = (IncompleteTour)object;
+		return getString("_UI_IncompleteTour_type") + " " + incompleteTour.getFitness();
 	}
 	
 
@@ -166,7 +164,7 @@ public class IncompleteTourItemProvider extends ChromosomeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(IncompleteTour.class)) {
-			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL_A:
+			case GaSalesManPackage.INCOMPLETE_TOUR__MODEL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case GaSalesManPackage.INCOMPLETE_TOUR__CITIES:

@@ -63,9 +63,9 @@ public class CitiesMapItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNumCitiesPropertyDescriptor(object);
 			addXRangePropertyDescriptor(object);
 			addYRangePropertyDescriptor(object);
-			addNumCitiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -186,7 +186,7 @@ public class CitiesMapItemProvider
 	@Override
 	public String getText(Object object) {
 		CitiesMap citiesMap = (CitiesMap)object;
-		return getString("_UI_CitiesMap_type") + " " + citiesMap.getXRange();
+		return getString("_UI_CitiesMap_type") + " " + citiesMap.getNumCities();
 	}
 	
 
@@ -202,9 +202,9 @@ public class CitiesMapItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CitiesMap.class)) {
+			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
 			case GaSalesManPackage.CITIES_MAP__XRANGE:
 			case GaSalesManPackage.CITIES_MAP__YRANGE:
-			case GaSalesManPackage.CITIES_MAP__NUM_CITIES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case GaSalesManPackage.CITIES_MAP__CITIES:

@@ -17,12 +17,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -61,8 +63,31 @@ public class ChromosomeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFitnessPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Fitness feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFitnessPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Chromosome_fitness_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Chromosome_fitness_feature", "_UI_Chromosome_type"),
+				 GaSalesManPackage.Literals.CHROMOSOME__FITNESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -114,7 +139,8 @@ public class ChromosomeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Chromosome_type");
+		Chromosome chromosome = (Chromosome)object;
+		return getString("_UI_Chromosome_type") + " " + chromosome.getFitness();
 	}
 	
 
@@ -130,6 +156,9 @@ public class ChromosomeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Chromosome.class)) {
+			case GaSalesManPackage.CHROMOSOME__FITNESS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case GaSalesManPackage.CHROMOSOME__GENES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
