@@ -1,10 +1,33 @@
 [comment encoding = UTF-8 /]
 [module generate('http://www.example.org/gaSalesMan')]
 
-
-[template public generateElement(anOclAny : OclAny)]
+[template public generateElement(aTourOptimizer : TourOptimizer)]
 [comment @main/]
-[file (anOclAny.name, false, 'UTF-8')]
 
+[comment aTourOptimizer.setupPopulation()/]
+[comment aTourOptimizer.evolvePopulation()/]
+
+[file ('TSPSummary.txt', false, 'UTF-8')]
+This file summarizes the solution to a sample Traveling Salesman Problem (TSP) solved by the Genetic Algorithm (GA).
+
+The Map for this TSP contains the following [aTourOptimizer.maps.cities->size()/] cities:
+[for (c:City | aTourOptimizer.maps.cities)]
+	- [c.name/], at ([c.x/], [c.y/])
+[/for]
+
+A TourOptimizer is used to generate and evolve the population of solutions. Each solution consists of a tour. 
+A tour can be an IncompleteTour or a CompleteTour. An IncompleteTour includes some cities, while a CompleteTour includes all cities.
+
+The TourOptimizer is associated with a population of [aTourOptimizer.tourpopulations.chromosomes->collect(t:Chromosome | t->selectByType(IncompleteTour))->size()/] incomplete and [aTourOptimizer.tourpopulations.chromosomes->collect(t:Chromosome | t->selectByType(CompleteTour))->size()/] complete tours. These tours are as follows: 
+[for (t:Chromosome | aTourOptimizer.tourpopulations.chromosomes)]
+	[if (t.oclIsTypeOf(IncompleteTour))]
+	- Incomplete [t.eGet('model')/]: [t.eAllContents().eGet('name')->sep(', ')/]
+	[/if]
+	[if (t.oclIsTypeOf(CompleteTour))]
+	- Complete [t.eGet('model')/]: [t.eAllContents().eGet('name')->sep(', ')/]
+	[/if]
+[/for]
+
+Finally, the fittest/best tour is [aTourOptimizer.tourpopulations.chromosomes->at(aTourOptimizer.tourpopulations.chromosomes->collect(t:Chromosome | t.fitness)->indexOf(aTourOptimizer.tourpopulations.chromosomes->collect(t:Chromosome | t.fitness)->max())).eGet('model')/], with a fitness of [aTourOptimizer.tourpopulations.chromosomes->collect(t:Chromosome | t.fitness)->max()/].
 [/file]
 [/template]
